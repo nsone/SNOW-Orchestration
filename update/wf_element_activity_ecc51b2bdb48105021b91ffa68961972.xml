@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="wf_element_activity">
+    <wf_element_activity action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <attributes/>
+        <base_provider display_value="REST Web Service">8817a25e37222100aa40cc9fbe41f106</base_provider>
+        <category>DNS</category>
+        <checked_out_by/>
+        <default_height/>
+        <default_width/>
+        <description>Removes an existing record and all associated answers and configuration details. We will no longer respond for this record once it is deleted, and it cannot be recovered, so use caution. Note: This operation deletes all answers associated with the domain and record type.</description>
+        <image>images/heisenberg_icons/workflow_ie8/provider_rest.png</image>
+        <input_meta>{"name":"Input","type":"DATA_OBJECT","properties":[{"name":"domain","type":"STRING","mandatory":true},{"name":"type","type":"STRING","mandatory":true},{"name":"zone","type":"STRING","mandatory":true},{"name":"company_domain","type":"STRING","mandatory":true}]}</input_meta>
+        <input_process_script><![CDATA[function createHeader()
+{
+var NS1header={};
+NS1header.name='X-NSONE-Key';
+NS1header.value=gs.getProperty('x_ns1_ns1_orchestr.nsone.api.key');
+executionParam.headers.push(NS1header);
+}
+createHeader();]]></input_process_script>
+        <input_transform>{"web_service_message":"33434129db26805021b91ffa689619a2","web_service_message_function":"642f879c1bba885023b9631e6e4bcbb4","web_service_endpoint":"","parameters":"[{\"name\":\"zone\",\"value\":\"${activityInput.zone}\",\"additional_attribute\":\"\"},{\"name\":\"type\",\"value\":\"${activityInput.type}\",\"additional_attribute\":\"\"},{\"name\":\"domain\",\"value\":\"${activityInput.domain}\",\"additional_attribute\":\"\"},{\"name\":\"api.mycompany.net\",\"value\":\"${activityInput.company_domain}\",\"additional_attribute\":\"\"}]","headers":"[]","queryParameters":"[]","midCapabilities":"18409d8007482000dada43c0d1021e8f","use_mid_server":"false","time_out":"10","auth_type":"use_existing_credentials","credentials":"","protocol_profile":"","oauth_entity_profile":""}</input_transform>
+        <local_variables/>
+        <name>Delete Host Record</name>
+        <output_meta>{"name":"Output","type":"DATA_OBJECT","properties":[{"name":"status_code","type":"INTEGER"},{"name":"error","type":"STRING"}]}</output_meta>
+        <output_process_script/>
+        <output_transform>[{"toLink":"activityOutput.status_code","description":"","to":"status_code","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.status_code","from":"${executionResult.status_code}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""},{"toLink":"activityOutput.error","description":"","to":"error","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.error","from":"${executionResult.error}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""}]</output_transform>
+        <processing_script/>
+        <sample_payloads>{}</sample_payloads>
+        <short_description>Delete Host Record</short_description>
+        <style/>
+        <sys_class_name>wf_element_activity</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:42:17</sys_created_on>
+        <sys_id>ecc51b2bdb48105021b91ffa68961972</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Delete Host Record</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>wf_element_activity_ecc51b2bdb48105021b91ffa68961972</sys_update_name>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:42:35</sys_updated_on>
+        <version_container_id>acce475c1bba885023b9631e6e4bcb8e</version_container_id>
+    </wf_element_activity>
+    <sys_translated_text action="delete_multiple" query="documentkey=ecc51b2bdb48105021b91ffa68961972"/>
+    <wf_versionable action="INSERT_OR_UPDATE">
+        <checked_out/>
+        <checked_out_by/>
+        <published>true</published>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:42:17</sys_created_on>
+        <sys_id>a8c51b2bdb48105021b91ffa68961973</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:42:35</sys_updated_on>
+        <valid_from>2020-04-14 19:42:35</valid_from>
+        <valid_to/>
+        <version>3</version>
+        <version_container_id>acce475c1bba885023b9631e6e4bcb8e</version_container_id>
+        <wf_element_definition display_value="Delete Host Record">ecc51b2bdb48105021b91ffa68961972</wf_element_definition>
+    </wf_versionable>
+    <wf_condition_default action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Delete Host Record">ecc51b2bdb48105021b91ffa68961972</activity_definition>
+        <condition>activityOutput.error == null</condition>
+        <derived_definition>12ce0b9c1bba885023b9631e6e4bcb05</derived_definition>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <name>Success</name>
+        <order/>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:42:17</sys_created_on>
+        <sys_id>a0c51b2bdb48105021b91ffa68961976</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:42:17</sys_updated_on>
+    </wf_condition_default>
+    <wf_condition_default action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Delete Host Record">ecc51b2bdb48105021b91ffa68961972</activity_definition>
+        <condition/>
+        <derived_definition>5d0097101bfa885023b9631e6e4bcbdf</derived_definition>
+        <else_flag>true</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <name>Failure</name>
+        <order/>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:42:17</sys_created_on>
+        <sys_id>e4c51b2bdb48105021b91ffa68961976</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:42:17</sys_updated_on>
+    </wf_condition_default>
+    <wf_versionable action="update_multiple" query="version_container_id=acce475c1bba885023b9631e6e4bcb8e^sys_id!=a8c51b2bdb48105021b91ffa68961973^version&lt;3">
+        <published>false</published>
+    </wf_versionable>
+    <wf_activity action="update_multiple" is_dot_walk_query="true" query="workflow_version.published=true^activity_definition.version_container_id=acce475c1bba885023b9631e6e4bcb8e">
+        <new_activity_definition>ecc51b2bdb48105021b91ffa68961972</new_activity_definition>
+        <out_of_date>true</out_of_date>
+        <notes>There is a newer version of this activity.
+
+To update the activity, check out the workflow, select the activity, right click
+and select 'Update activity' to use the latest version, then publish the workflow</notes>
+    </wf_activity>
+</record_update>

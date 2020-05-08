@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>smorey</sys_created_by>
+        <sys_created_on>2020-05-01 11:31:20</sys_created_on>
+        <sys_id>383809c1db64501021b91ffa68961903</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ZoneAndRecordsAjax.x_ns1_ns1_orchestr.admin</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_security_acl display_value="ZoneAndRecordsAjax">6cbf7b3cdbfecc5021b91ffa68961906</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_383809c1db64501021b91ffa68961903</sys_update_name>
+        <sys_updated_by>smorey</sys_updated_by>
+        <sys_updated_on>2020-05-01 11:31:20</sys_updated_on>
+        <sys_user_role display_value="x_ns1_ns1_orchestr.admin" name="x_ns1_ns1_orchestr.admin">9eb9cb581bba885023b9631e6e4bcb4c</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_ns1_ns1_orchestr.ZonesAndRecordsLibrary</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>This library contains functions for operations on zones and records</description>
+        <name>ZonesAndRecordsLibrary</name>
+        <script><![CDATA[var ZonesAndRecordsLibrary = Class.create();
+
+ZonesAndRecordsLibrary.prototype = {
+
+	ZONE_IMPORT_SET_TBL_NAME : 'x_ns1_ns1_orchestr_di_zone',
+	RECORD_IMPORT_SET_TBL_NAME: 'x_ns1_ns1_orchestr_di_zone_record',
+	ZONE_TABLE_NAME: 'x_ns1_ns1_orchestr_dns_zone',
+	RECORD_TABLE_NAME: 'x_ns1_ns1_orchestr_zone_record',
+
+	OPERATIONAL_STATUS:{RETIRED:6},
+
+	initialize: function() {
+
+		this.logger = new x_ns1_ns1_orchestr.SystemLogHelper();
+		var func = "initialize";
+		this.logger.info(this.type, func, "Entering Function");
+
+		this.importSetUtil = new x_ns1_ns1_orchestr.ImportSetApiUtils();
+		this.zoneApis = new x_ns1_ns1_orchestr.NSOneApiZones();
+		this.apiQueue = new x_ns1_ns1_orchestr.APIRequestQueueHelper();
+	},
+
+	/* *** Queue Entries *** */
+
+	createAllZonesRequestQueueEntry : function(){
+
+		this.apiQueue.createApiRequestQueueEntry('GetAllActiveZones', null);
+	},
+
+	createZoneDetailsRequestQueueEntry : function(zoneName){
+
+		this.apiQueue.createApiRequestQueueEntry('GetZoneDetails', {'zoneName': zoneName});
+	},
+
+	createRecordConfigRequestQueueEntry : function(zoneName, recordName, type){
+
+		var recordData = {
+			"zoneName": zoneName,
+			"recordName":recordName,
+			"type":type
+		};
+
+		this.apiQueue.createApiRequestQueueEntry('GetRecordConfig', recordData);
+	},
+
+	/* *** Queue Entries End *** */
+
+	/* Method to get zones and records */
+
+	getAllActiveZones: function(){
+
+		var func = "getAllActiveZones";
+		this.logger.info(this.type, func, "Entering Function");
+
+		var statusCode = -1;
+
+		try{
+			var zones = this.zoneApis.getAllZones();
+
+			if(zones){
+				//var result = this.zoneApis.insertAllActiveZones(zones);
+				//statusCode = this.zoneApis.result.statusCode;
+
+				for(var zone in zones){
+					//Import record configuration to Zone Record				
+					var zoneImportResult = this.importSetUtil.processImportSet(this.ZONE_IMPORT_SET_TBL_NAME, zones[zone]);
+					//
+					if(zoneImportResult != 201){
+						statusCode = -1;
+					}
+					else{
+						statusCode = zoneImportResult;
+					}
+				}
+			}
+
+		}
+		catch(e){
+			statusCode = -1;
+			this.logger.error(this.type,func, "Exception thrown in getting zones" + JSON.stringify(e));   
+		}
+		finally{			
+			return statusCode;
+		}
+	},
+
+
+	insertRecordDetails : function(domainName, recDomainName, recType){
+
+		try{
+
+			var configDetails = this.zoneApis.getRecordConfigurationDetails(domainName, recDomainName, recType);
+			var recordData =  JSON.stringify(configDetails);
+
+			recordData = JSON.parse(recordData);	
+			var grUpdateRecord = new GlideRecord(this.RECORD_TABLE_NAME);
+			grUpdateRecord.addEncodedQuery('u_record_id='+recordData["id"]);
+			//	grUpdateRecord.addEncodedQuery('u_record_id='+recordData["id"]+'^fqdn='+recordData["zone"]+'^u_type='+recordData["type"]);
+			grUpdateRecord.query();
+			while(grUpdateRecord.next()){
+				grUpdateRecord.use_client_subnet = recordData["use_client_subnet"];					
+
+				if(recordData["networks"]){
+					grUpdateRecord.networks = recordData["networks"].toString();
+				}
+
+				if(recordData["feeds"]){
+					grUpdateRecord.feeds = recordData["feeds"].toString();
+				}
+				if(recordData["meta"]){
+					grUpdateRecord.meta = JSON.stringify(recordData["meta"], null, "\t");
+				}
+				if(recordData["regions"]){
+					grUpdateRecord.regions = JSON.stringify(recordData["regions"], null, "\t");
+				}
+				if(recordData["answers"]){
+					var answers=JSON.stringify(recordData["answers"], null, "\t");
+					//	grUpdateRecord.answers =answers.substring(answers.indexOf('[') + 1,  answers.indexOf(']'));  	
+					grUpdateRecord.answers =answers;  	
+				}
+				if(recordData["filter"]){
+					grUpdateRecord.filter = recordData["filter"].toString();
+				}
+				grUpdateRecord.update();
+			}
+
+
+			//Call import set api				
+			//	var result = this.zoneApis.insertAllRecords(configDetails);
+		}
+		catch(e){
+			this.logger.error(this.type,func, "Exception thrown in getting record configuration details. Exception " + JSON.stringify(e));   
+		}
+		finally{			
+			return this.zoneApis.result;
+		}
+
+	},
+
+
+	/* get zone details */
+	insertRecords: function(domainName){
+		var func = "insertRecords";		
+		this.logger.info(this.type, func, "Entering Function");
+
+		var statusCode = -1;
+
+		try{
+			//Get Zone Details
+			var zoneDetails = this.zoneApis.getZoneDetails(domainName);	
+			if(zoneDetails && zoneDetails.records){
+
+				var records = zoneDetails.records;
+				//set zone name to each record;
+				for (var record in records){					
+					records[record].zone = domainName;
+					var recImportResult = this.importSetUtil.processImportSet(this.RECORD_IMPORT_SET_TBL_NAME, 	records[record]);
+
+					if(recImportResult != 201){
+						statusCode = -1;
+					}
+					else{
+						statusCode = recImportResult;
+					}
+				}
+
+				//Call import set api				
+				//var result = this.zoneApis.insertAllRecords(records);
+			}
+		}
+		catch(e){
+			statusCode = -1;
+			this.logger.error(this.type,func, "Exception thrown in getting records for zone " + domainName + " Exception " + JSON.stringify(e));   
+		}
+		finally{			
+			return statusCode;
+		}
+
+	},
+
+	getIPRelatedRecords: function(records){
+
+		return records.filter(function(record){
+			return record.type == 'A' || record.type == 'AAAA' || record.type == 'PTR';
+		}
+							 );
+	},	
+
+	isReverseRecordPresent: function(records, recordNameToMatch){
+
+		return records.filter(function(record){
+			return  record.type == 'PTR' && record.domain == recordNameToMatch;
+		}
+							 );
+	},	
+
+	/* Get all records for a zone */
+	getAllRecordsForZone: function(domainName){
+
+		var func = "getAllRecordsForZone";		
+		this.logger.info(this.type, func, "Entering Function");
+
+		try{
+			//Get Zone Details
+			var zoneDetails = this.zoneApis.getZoneDetails(domainName);	
+			if(zoneDetails){
+				this.logger.debug(this.type, func, "zone details are "+ JSON.stringify(zoneDetails));
+
+				//Get all records per zone
+				var records = zoneDetails.records;
+
+				this._processRecords(domainName, records);
+			}
+			else{
+				this.logger.warn(this.type, func, " unable to find zone details for zone: "+ domainName);
+			}
+
+		}
+		catch(e){
+			this.logger.error(this.type,func, "Exception thrown in getting records for zone " + domainName + " Exception " + JSON.stringify(e));   
+		}
+
+	},
+
+
+
+	/* Process all records for transformation */
+	_processRecords: function(domainName, records){
+
+			var func = "_processRecords";
+		this.logger.info(this.type, func, "Entering Function");
+
+		try{
+			for (var record in records){				
+				this.logger.info(this.type, func, "processing zone record: "+ records[record].domain + " for zone " + domainName);
+
+				var recDomainName = records[record].domain.toString();
+				var recType = records[record].type.toString();
+
+				var recordData = {
+					"zoneName": domainName,
+					"recordName":recDomainName,
+					"type":recType
+				};
+
+				this.apiQueue.createApiRequestQueueEntry('GetAllActiveZones', recordData);
+				
+			}
+		}
+		catch(e){
+			this.logger.error(this.type,func, "Exception thrown in processing records " + JSON.stringify(e));   
+		}
+	},
+
+	/* *** CLEANUP CODE  *** */
+
+	/*	Delete record import sets and their related import set rows
+		that were created more than or equal to 3 hours ago	*/	
+	cleanupRecordImportSets: function(){
+
+		var func = "cleanupRecordImportSets";
+		this.logger.info(this.type, func, "Entering Function");
+
+		var ic = new global.ImportSetCleaner(this.RECORD_IMPORT_SET_TBL_NAME);
+
+		ic.setDaysAgo(0.125);
+		ic.clean();
+
+	},
+
+	/*	Delete Zone import sets and their related import set rows
+		that were created more than or equal to 3 hours ago	*/
+	cleanupZoneImportSets: function(){
+
+		var func = "cleanupZoneImportSets";
+		this.logger.info(this.type, func, "Entering Function");
+
+		var ic = new global.ImportSetCleaner(this.ZONE_IMPORT_SET_TBL_NAME);
+		ic.setDaysAgo(0.125);
+		ic.clean();
+	},
+
+	/* *** CLEANUP CODE ENDS *** */
+
+	/* *** CI RETIREMENT CODE *** */
+
+	retireOldZones: function(daysAgo){
+		var ago = daysAgo || 1;
+		var query = 'operational_status!=6^last_discoveredRELATIVELE@dayofweek@ago@' + ago;
+		this.retireCI(this.ZONE_TABLE_NAME, query);		
+	},
+
+	retireChildRecordsOfZone: function(zoneSysId){
+
+		var func = "retireChildRecordsOfZone";
+		this.logger.info(this.type, func, "Entering Function");
+
+		var query = 'u_zone=' + zoneSysId;		
+		this.retireCI(this.RECORD_TABLE_NAME, query);
+	},
+
+	retireOldRecords: function(daysAgo){
+		var ago = daysAgo || 1;
+		var query = 'operational_status!=6^last_discoveredRELATIVELE@dayofweek@ago@' + ago;		
+		this.retireCI(this.RECORD_TABLE_NAME, query);		
+	},
+
+	retireCI: function(tableName, query){
+
+		var func = "retireZones";
+		this.logger.info(this.type, func, "Entering Function");
+
+		var daysAgo = gs.getProperty('x_ns1_ns1_orchestr.ci.retirement.period', 1);
+
+		var zone = new GlideRecord(tableName);
+		zone.addEncodedQuery(query);
+		zone.setValue('operational_status',	this.OPERATIONAL_STATUS.RETIRED);
+		zone.updateMultiple();		
+
+	},
+
+	/* *** CI RETIREMENT CODE ENDS *** */
+
+
+
+
+	/* *** Tests ***
+		new x_ns1_ns1_orchestr.ZonesAndRecordsLibrary().getAllActiveZones();
+
+		var domainName = '';
+		new x_ns1_ns1_orchestr.ZonesAndRecordsLibrary().getAllRecordsForZone(domainName);
+
+		new x_ns1_ns1_orchestr.ZonesAndRecordsLibrary().retireOldZones(1);
+
+		new x_ns1_ns1_orchestr.ZonesAndRecordsLibrary().retireOldRecords(1);
+
+		new x_ns1_ns1_orchestr.ZonesAndRecordsLibrary().retireChildRecordsOfZone('3D013298551bd8cc1023b9631e6e4bcb77');
+	*/
+
+	type: 'ZonesAndRecordsLibrary'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-01-24 14:14:36</sys_created_on>
+        <sys_id>b6f141e5db26805021b91ffa68961957</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>ZonesAndRecordsLibrary</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>sys_script_include_b6f141e5db26805021b91ffa68961957</sys_update_name>
+        <sys_updated_by>smorey</sys_updated_by>
+        <sys_updated_on>2020-04-30 20:08:06</sys_updated_on>
+    </sys_script_include>
+</record_update>

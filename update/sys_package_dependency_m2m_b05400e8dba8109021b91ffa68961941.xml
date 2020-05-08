@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="Orchestration" source="com.snc.runbook_automation">368401221b300010587e631e6e4bcbfd</dependency>
+        <min_version>1.0.0</min_version>
+        <sys_created_by>smorey</sys_created_by>
+        <sys_created_on>2020-04-29 17:16:51</sys_created_on>
+        <sys_id>b05400e8dba8109021b91ffa68961941</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_updated_by>smorey</sys_updated_by>
+        <sys_updated_on>2020-04-29 17:16:51</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>

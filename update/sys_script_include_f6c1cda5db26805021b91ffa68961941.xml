@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_ns1_ns1_orchestr.NSOneApiCore</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>NSOneApiCore</name>
+        <script><![CDATA[var NSOneApiCore = Class.create();
+NSOneApiCore.prototype = {
+	/* Constants to go here */
+
+
+	initialize: function() {
+
+		var func = "initialize";
+		this.logger = new x_ns1_ns1_orchestr.SystemLogHelper();		
+		this.logger.info(this.type, func, "Entering Function");
+
+		this.synchronous = true;
+
+		this.result = {
+			remainingRate:"",
+			errorMessage: "",
+			errorCode: "",
+			statusCode: "",
+			nsOneError: {
+				errorCode: "",
+				errorSummary: "",
+				errorDetails: ""
+			}
+		};		
+	},
+
+	/*
+     * Sends a formatted REST request to NSOne
+     */
+	sendRequest: function(
+	method, //(string) POST, GET, PUT, PATCH, DELETE
+	 endpoint, //(string) full REST endpoint URI
+	 headers, //(array) Array of name/value pair objects
+	 parameters,//(array) Array of name/value pair objects
+	 body //(JS Object) Javascript object representing the body
+	) {
+
+		var request, response; 
+		var func = "sendRequest";
+
+		try {
+
+			this.logger.info(this.type, func ,"sending request");
+
+			request = new sn_ws.RESTMessageV2(endpoint , method);
+			//request.setEccParameter('skip_sensor',true);
+
+			/* We can use this constructor too*/
+			//request = new sn_ws.RESTMessageV2();
+			//request.setEndpoint(endpoint);
+			//request.setHttpMethod(method.toLowerCase());
+
+			for (var header = 0; header < headers.length; header++) {
+				request.setRequestHeader(headers[header].name, headers[header].value);
+			}
+
+			if(parameters){
+				for (var param = 0; param < parameters.length; param++) {
+					request.setStringParameterNoEscape(parameters[param].name, parameters[param].value);
+				}
+			}
+
+			request.setRequestBody(JSON.stringify(body));
+
+			if (!this.synchronous) {
+				request.executeAsync();
+			} else {
+				response = request.execute();             
+			}
+
+
+		} catch (e) {
+			this.logger.error(this.type, func , "Exception thrown in submitting request " + JSON.stringify(e));          
+		}
+		return response;
+	},
+
+
+	sendSOAPRequest: function(
+	soapFunction, //(string) SOAP Message Function Name
+	 messageName, //(string) SOAP Message Name
+	 headers, //(array) Array of name/value pair objects
+	 parameters,//(array) Array of name/value pair objects
+	 body //(XML String) XML String representing the body
+	) {
+
+		var request, response; 
+		var func = "sendRequest";
+
+		try {
+
+			this.logger.info(this.type, func ,"sending SOAP request");
+
+			request = new sn_ws.SOAPMessageV2(messageName, soapFunction);
+			//request.setEccParameter('skip_sensor',true);
+
+			if(headers){
+				for (var header = 0; header < headers.length; header++) {
+					request.setRequestHeader(headers[header].name, headers[header].value);
+				}
+			}
+
+			if(parameters){
+				for (var param = 0; param < parameters.length; param++) {
+					request.setStringParameterNoEscape(parameters[param].name, parameters[param].value);
+				}
+			}
+
+			if(body){
+				request.setRequestBody(body);
+			}
+
+			if (!this.synchronous) {
+				request.executeAsync();
+			} else {
+				response = request.execute();             
+			}
+
+		} catch (e) {
+			this.logger.error(this.type, func , "Exception thrown in submitting request " + JSON.stringify(e));          
+		}
+		return response;
+	},
+
+
+
+	/* */
+	responseWasSuccessful: function(
+	restResponse //(RESTResponseV2)
+	){
+		var func = "responseWasSuccessful";
+		var success = true;
+
+		try {
+
+			this.logger.info(this.type, func, "Entering Function");
+
+			if (!restResponse) {				 
+				var msg = "Invalid parameter 'restResponse': " + restResponse;
+				this.logger.error(this.type, func, msg);
+				throw new Error(msg);
+			}
+
+			//this.logger.warn(this.type, func, "All Headers" + restResponse.getHeader('X-RateLimit-Remaining'));
+			
+			this.result.statusCode = restResponse.getStatusCode();
+			//this.result.remainingRate = restResponse.getHeader('X-RateLimit-Remaining');
+			//gs.getUser().savePreference('api.max.limit', restResponse.getHeader('X-RateLimit-Remaining'));
+
+			if (restResponse.haveError()) {
+				var errorCode = restResponse.getErrorCode();
+				var errorMessage = restResponse.getErrorMessage();
+
+				this.logger.error(this.type, func , "Error in API Request with error code: " + errorCode + " and Error Message: " + errorMessage);
+
+				this.result.errorMessage = errorMessage;
+				this.result.errorCode = errorCode;
+				this.result.errorMessage += "\n" + restResponse.getBody().slice(0,1000);
+				this.result.nsOneError = JSON.parse(restResponse.getBody());
+				success = false;
+			}
+		} catch (e) {
+			this.logger.error(this.type, func ,"Exception ocurred " + e);            
+			success = false;
+		}
+
+		return success;
+
+	},
+
+	getDefaultRequestHeaders: function() {
+		var h = [];
+		h.push({ "name": "X-NSONE-Key", "value": gs.getProperty("x_ns1_ns1_orchestr.nsone.api.key") });       
+		h.push({ "name": "Accept", "value": "application/json" }); 
+		h.push({ "name": "Content-Type", "value": "application/json" });    
+
+		return h;
+	},
+
+
+	//Returns response string in JSON format
+	getResponseJSON: function(response){
+
+		//This method will have business logis to populate CIs
+		var func = "getResponseJSON";
+
+		this.logger.debug(this.type, func, "Response Body \n" + response.getBody());
+		var responseBody = response.getBody();
+
+		return JSON.parse(responseBody);
+	},
+
+	/*TODO*/
+	testConnection:function(){
+
+	},
+
+	type: 'NSOneApiCore'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-01-24 14:13:46</sys_created_on>
+        <sys_id>f6c1cda5db26805021b91ffa68961941</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>NSOneApiCore</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>sys_script_include_f6c1cda5db26805021b91ffa68961941</sys_update_name>
+        <sys_updated_by>smorey</sys_updated_by>
+        <sys_updated_on>2020-04-30 20:08:06</sys_updated_on>
+    </sys_script_include>
+</record_update>

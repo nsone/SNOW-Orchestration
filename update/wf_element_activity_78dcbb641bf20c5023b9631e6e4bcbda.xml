@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="wf_element_activity">
+    <wf_element_activity action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <attributes/>
+        <base_provider display_value="REST Web Service">8817a25e37222100aa40cc9fbe41f106</base_provider>
+        <category>DHCP</category>
+        <checked_out_by/>
+        <default_height/>
+        <default_width/>
+        <description>Creates a reservation. &#13;
+&#13;
+Note: Currently, the reservation must be associated with an address. The DHCP server, if enabled, will provide the associated IP address and any DHCP options to the client with the associated MAC address. The address and scope group must each meet certain invariants or else the request will result in a 422. &#13;
+&#13;
+The address must:&#13;
+&#13;
+Be of type host.&#13;
+Not be associated with another scope group&#13;
+Not have another conflicting reservation&#13;
+The scope group must:&#13;
+&#13;
+Only contain reservations and scopes from a single network.&#13;
+Options should be supported for the address' protocol.</description>
+        <image>images/heisenberg_icons/workflow_ie8/provider_rest.png</image>
+        <input_meta>{"name":"Input","type":"DATA_OBJECT","properties":[{"name":"domain","type":"STRING","mandatory":true},{"name":"scope_group_id","type":"INTEGER","mandatory":false},{"name":"address_id","type":"INTEGER","mandatory":true},{"name":"mac","type":"STRING","mandatory":false},{"name":"options","type":"DATA_ARRAY","properties":[{"name":"Array element type: ","type":"DATA_OBJECT","properties":[]}]}]}</input_meta>
+        <input_process_script><![CDATA[gs.info(" >>>>>>>>" + activityInput.options);
+gs.info(" >>>>>>>>" + JSON.stringify(activityInput.options));
+]]></input_process_script>
+        <input_transform>{"web_service_message":"2433cde5db26805021b91ffa6896192f","web_service_message_function":"2d6cf288db3e885021b91ffa68961941","web_service_endpoint":"","parameters":"[{\"name\":\"address_id\",\"value\":\"${activityInput.address_id}\",\"additional_attribute\":\"\"},{\"name\":\"options\",\"value\":\"${activityInput.options}\",\"additional_attribute\":\"\"},{\"name\":\"mac\",\"value\":\"${activityInput.mac}\",\"additional_attribute\":\"\"},{\"name\":\"api.mycompany.net\",\"value\":\"${activityInput.domain}\",\"additional_attribute\":\"\"},{\"name\":\"scope_group_id\",\"value\":\"${activityInput.scope_group_id}\",\"additional_attribute\":\"\"}]","headers":"[]","queryParameters":"[]","midCapabilities":"18409d8007482000dada43c0d1021e8f","use_mid_server":"false","time_out":"10","auth_type":"use_existing_credentials","credentials":"","protocol_profile":"","oauth_entity_profile":""}</input_transform>
+        <local_variables/>
+        <name>Create Reservation</name>
+        <output_meta>{"name":"Output","type":"DATA_OBJECT","properties":[{"name":"status_code","type":"INTEGER"},{"name":"header","type":"DATA_OBJECT","properties":[{"name":"body","type":"STRING"},{"name":"error","type":"STRING"}]},{"name":"output","type":"DATA_OBJECT","properties":[]}]}</output_meta>
+        <output_process_script/>
+        <output_transform>[{"toLink":"activityOutput.status_code","description":"","to":"status_code","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.body","from":"${executionResult.body}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""},{"toLink":"activityOutput.header","description":"","to":"header","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.body","from":"${executionResult.body}","fromSource":"executionResult","type":"JSON","children":"[]","translation":"$"},{"toLink":"activityOutput.header.body","description":"","to":"header.body","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.body","from":"${executionResult.body}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""},{"toLink":"activityOutput.header.error","description":"","to":"header.error","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.body","from":"${executionResult.body}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""},{"toLink":"activityOutput.output","description":"","to":"output","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.body","from":"${executionResult.body}","fromSource":"executionResult","type":"JSON","children":"[]","translation":"$"}]</output_transform>
+        <processing_script/>
+        <sample_payloads>{}</sample_payloads>
+        <short_description>Create Reservation</short_description>
+        <style/>
+        <sys_class_name>wf_element_activity</sys_class_name>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-02-03 11:32:41</sys_created_on>
+        <sys_id>78dcbb641bf20c5023b9631e6e4bcbda</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Create Reservation</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>wf_element_activity_78dcbb641bf20c5023b9631e6e4bcbda</sys_update_name>
+        <sys_updated_by>rpatil</sys_updated_by>
+        <sys_updated_on>2020-02-03 11:48:02</sys_updated_on>
+        <version_container_id>ac9bba48db3e885021b91ffa6896199b</version_container_id>
+    </wf_element_activity>
+    <sys_translated_text action="delete_multiple" query="documentkey=78dcbb641bf20c5023b9631e6e4bcbda"/>
+    <wf_versionable action="INSERT_OR_UPDATE">
+        <checked_out/>
+        <checked_out_by/>
+        <published>false</published>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-02-03 11:32:41</sys_created_on>
+        <sys_id>38dcbb641bf20c5023b9631e6e4bcbdb</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>rpatil</sys_updated_by>
+        <sys_updated_on>2020-02-03 11:48:02</sys_updated_on>
+        <valid_from>2020-02-03 11:42:21</valid_from>
+        <valid_to/>
+        <version>3</version>
+        <version_container_id>ac9bba48db3e885021b91ffa6896199b</version_container_id>
+        <wf_element_definition display_value="Create Reservation">78dcbb641bf20c5023b9631e6e4bcbda</wf_element_definition>
+    </wf_versionable>
+    <wf_condition_default action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Create Reservation">78dcbb641bf20c5023b9631e6e4bcbda</activity_definition>
+        <condition>activityOutput.error == null</condition>
+        <derived_definition>ee9b7e84db3e885021b91ffa68961948</derived_definition>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <name>Success</name>
+        <order/>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-02-03 11:32:41</sys_created_on>
+        <sys_id>70dcbb641bf20c5023b9631e6e4bcbdd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>rpatil</sys_updated_by>
+        <sys_updated_on>2020-02-03 11:32:41</sys_updated_on>
+    </wf_condition_default>
+    <wf_condition_default action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Create Reservation">78dcbb641bf20c5023b9631e6e4bcbda</activity_definition>
+        <condition/>
+        <derived_definition>475e32c8db3e885021b91ffa68961996</derived_definition>
+        <else_flag>true</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <name>Failure</name>
+        <order/>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-02-03 11:32:41</sys_created_on>
+        <sys_id>74dcbb641bf20c5023b9631e6e4bcbdc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>rpatil</sys_updated_by>
+        <sys_updated_on>2020-02-03 11:32:41</sys_updated_on>
+    </wf_condition_default>
+    <wf_versionable action="update_multiple" query="version_container_id=ac9bba48db3e885021b91ffa6896199b^sys_id!=38dcbb641bf20c5023b9631e6e4bcbdb^version&lt;3">
+        <published>false</published>
+    </wf_versionable>
+    <wf_activity action="update_multiple" is_dot_walk_query="true" query="workflow_version.published=true^activity_definition.version_container_id=ac9bba48db3e885021b91ffa6896199b">
+        <new_activity_definition>78dcbb641bf20c5023b9631e6e4bcbda</new_activity_definition>
+        <out_of_date>true</out_of_date>
+        <notes>There is a newer version of this activity.
+
+To update the activity, check out the workflow, select the activity, right click
+and select 'Update activity' to use the latest version, then publish the workflow</notes>
+    </wf_activity>
+</record_update>

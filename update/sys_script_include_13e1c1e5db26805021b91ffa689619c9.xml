@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_ns1_ns1_orchestr.SystemLogHelper</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>SystemLogHelper</name>
+        <script><![CDATA[var SystemLogHelper = Class.create();
+SystemLogHelper.prototype = {
+
+	initialize: function() {		
+		this.getLoggingLevel();
+	},
+
+	//Some Comment
+	enableTrace: 'false',
+	level: 3,
+
+	logPrefix: {
+		_DEBUG: {value:4, dispValue: 'Debug'},
+		_INFO: {value:3, dispValue: 'Info'},
+		_WARN: {value:2, dispValue: 'Warning'},
+		_ERROR: {value:1, dispValue: 'Error'},
+		_NONE: {value:0, dispValue: 'None'},
+	},
+
+
+	getLoggingLevel: function(){
+		this.level =gs.getProperty('x_ns1_ns1_orchestr.logging.level', 3);
+	},
+
+	log: function(
+	level, //(string) logging level assigned by the verbosity property
+	 library, //(string) name of the library/rule/etc where the function/code resides
+	 func, //(string)name of the function we are executing
+	 msg //(string) the message to log
+	) {
+		try {
+
+			if (this.level == this.logPrefix._NONE.value) {
+				return;
+			}
+
+			if (level.value <= this.level) {
+
+				msg = msg.replace(/,/g,",\n");
+				msg = msg.replace(/\{/g,"\{\n");
+				var dt = new GlideDateTime();
+				//prefix += "(" + dt.getNumericValue() + ")";
+				var fullMsg = "["+ level.dispValue +"]"+ "[" + dt.getNumericValue() + "] - [" + library + " >> " + func + "] - " + msg;
+				
+				gs.info(fullMsg);	
+			}			
+
+		} catch (e) {
+			gs.error(this.type + " Exception: " + e);
+		}
+	},
+
+	/* Convenience Functions */
+	debug: function(library, func, msg) {
+		this.log(this.logPrefix._DEBUG, library, func, msg);
+	},
+
+	info: function(library, func, msg) {
+		this.log(this.logPrefix._INFO, library, func, msg);
+	},
+
+	warn: function(library, func, msg) {
+		this.log(this.logPrefix._WARN, library, func, msg);
+	},
+
+	error: function(library, func, msg) {
+		this.log(this.logPrefix._ERROR, library, func, msg);
+	},
+
+
+	/*Test Function*/
+	test: function(){
+		gs.info("Current Log Level: " + gs.getProperty('x_ns1_ns1_orchestr.logging.level'));		
+		this.debug(this.type,"test()", "Debug Test");
+		this.info(this.type,"test()", "Info Test");		
+		this.warn(this.type,"test()", "Warn Test");
+		this.error(this.type,"test()", "Error Test");			
+	},
+
+	type: 'SystemLogHelper'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-01-24 14:14:21</sys_created_on>
+        <sys_id>13e1c1e5db26805021b91ffa689619c9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>SystemLogHelper</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>sys_script_include_13e1c1e5db26805021b91ffa689619c9</sys_update_name>
+        <sys_updated_by>rpatil</sys_updated_by>
+        <sys_updated_on>2020-01-24 14:56:52</sys_updated_on>
+    </sys_script_include>
+</record_update>

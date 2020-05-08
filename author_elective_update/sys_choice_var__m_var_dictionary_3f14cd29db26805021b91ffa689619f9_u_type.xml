@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="u_type" table="var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>A</label>
+            <language>en</language>
+            <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+            <sequence/>
+            <sys_created_by>wsuser</sys_created_by>
+            <sys_created_on>2020-04-01 19:27:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5bb594ebdb37801021b91ffa68961969</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>wsuser</sys_updated_by>
+            <sys_updated_on>2020-04-01 19:27:45</sys_updated_on>
+            <value>A</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>AAAA</label>
+            <language>en</language>
+            <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+            <sequence/>
+            <sys_created_by>wsuser</sys_created_by>
+            <sys_created_on>2020-04-01 19:28:02</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4fc514ebdb37801021b91ffa68961906</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>wsuser</sys_updated_by>
+            <sys_updated_on>2020-04-01 19:28:02</sys_updated_on>
+            <value>AAAA</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PTR</label>
+            <language>en</language>
+            <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+            <sequence/>
+            <sys_created_by>wsuser</sys_created_by>
+            <sys_created_on>2020-04-01 19:28:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>dfd554ebdb37801021b91ffa6896197a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>wsuser</sys_updated_by>
+            <sys_updated_on>2020-04-01 19:28:20</sys_updated_on>
+            <value>PTR</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>u_type</element>
+            <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>wsuser</sys_created_by>
+            <sys_created_on>2020-04-01 19:27:45</sys_created_on>
+            <sys_id>85c5d8abdb37801021b91ffa689619a0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>u_type</sys_name>
+            <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+            <sys_update_name>sys_choice_var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9_u_type</sys_update_name>
+            <sys_updated_by>wsuser</sys_updated_by>
+            <sys_updated_on>2020-04-01 19:27:45</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

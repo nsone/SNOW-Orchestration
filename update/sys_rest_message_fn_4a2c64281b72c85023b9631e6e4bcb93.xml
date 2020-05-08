@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user>wsuser</basic_auth_user>
+        <content/>
+        <function_name>Get a list of operator users</function_name>
+        <http_method>get</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>NS1-Operations [ Get a list of operator users ]</qualified_name>
+        <rest_endpoint>https://${api.mycompany.net}/v1/ops/operators</rest_endpoint>
+        <rest_message display_value="NS1-Operations">5e330129db26805021b91ffa689619d2</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>smorey</sys_created_by>
+        <sys_created_on>2020-02-02 20:21:01</sys_created_on>
+        <sys_id>4a2c64281b72c85023b9631e6e4bcb93</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get a list of operator users</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>sys_rest_message_fn_4a2c64281b72c85023b9631e6e4bcb93</sys_update_name>
+        <sys_updated_by>smorey</sys_updated_by>
+        <sys_updated_on>2020-02-02 20:21:01</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

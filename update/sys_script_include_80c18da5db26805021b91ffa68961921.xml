@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_ns1_ns1_orchestr.ImportSetApiUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>ImportSetApiUtils</name>
+        <script><![CDATA[var ImportSetApiUtils = Class.create();
+ImportSetApiUtils.prototype = Object.extendsObject(x_ns1_ns1_orchestr.NSOneApiCore,{
+	initialize: function() {
+		//Initialize Parent
+		x_ns1_ns1_orchestr.NSOneApiCore.prototype.initialize.call(this);
+
+		//Initialize logger
+		this.logger = new x_ns1_ns1_orchestr.SystemLogHelper();
+		var func = "initialize";
+		this.logger.info(this.type, func, "Entering Function");
+		this.instanceUri = gs.getProperty('glide.servlet.uri');
+	},
+
+	processImportSet: function(
+	importSetTableName,//(String) Name of Import Set Table
+	 requestBody//(JSON) Request Body
+	){
+		var func = "processImportSet";
+		this.logger.info(this.type, func, gs.getMessage("Entering Function, Params are 'importSetTableName: {0}'",[importSetTableName]));
+
+		var processViaRest = gs.getProperty('x_401282_nsone_int.data.import.method', 0) == 1 ? true : false; //0=Direct, 1= Rest
+		if(processViaRest == true){
+			return this.processImportSetViaRESTAPI(importSetTableName, requestBody);
+		}
+		else{
+			return this.processImportSetDirectly(importSetTableName, requestBody);
+		}	
+
+	},
+
+	processImportSetDirectly: function(
+	importSetTableName,//(String) Name of Import Set Table
+	 requestBody//(JSON) Request Body
+	){
+		var func = "processImportSetDirectly";
+		this.logger.info(this.type, func, gs.getMessage("Entering Function, Params are 'importSetTableName: {0}'",[importSetTableName]));
+
+		var importResult=	this.parseZoneData(importSetTableName,requestBody);
+
+		//Add below code end	
+		try{
+			if (importResult) {
+				return importResult;
+			} else {
+				this.result.nsOneError.errorDetails = "Error";
+			}
+		}
+
+		catch(e){
+			this.logger.error(this.type,func, "Exception thrown in getting zones" + JSON.stringify(e));   
+		}
+		return importResult;
+	},
+
+	parseZoneData : function(import_set_table,responseBody){
+		if(import_set_table=='x_ns1_ns1_orchestr_di_zone'){
+			try{
+				var gr = new GlideRecord(import_set_table);
+				gr.initialize();				
+				gr.records=responseBody.records;
+				gr.retry=responseBody.retry;
+				gr.zone=responseBody.zone;
+				gr.nx_ttl=responseBody.nx_ttl;
+				gr.ttl=responseBody.ttl;
+				gr.dnssec=responseBody.dnssec;
+				gr.ttl=responseBody.ttl;
+				gr.dnssec=responseBody.dnssec;
+				gr.network_pools=JSON.stringify(responseBody.network_pools);
+				gr.primary=JSON.stringify(responseBody.primary);
+				gr.refresh=responseBody.refresh;
+				gr.expiry=responseBody.expiry;
+				gr.dns_servers=JSON.stringify(responseBody.dns_servers);
+				gr.meta=JSON.stringify(responseBody.meta);
+				gr.link=responseBody.link;
+				gr.primary_master=responseBody.primary_master;
+				gr.id=responseBody.id;
+				gr.hostmaster=responseBody.hostmaster;
+				gr.networks=JSON.stringify(responseBody.networks);
+				gr.serial=responseBody.serial;
+				gr.insert();	
+				if(!gr.isValidRecord()){
+					return -1;
+				}else{
+					return 201;
+				}				
+			}
+			catch(e){
+				gs.error('Error in parseZoneData of importsetUtil'+e);
+			}
+		}
+		else{
+			if(import_set_table=='x_ns1_ns1_orchestr_di_zone_record'){
+				try{
+					var grecord = new GlideRecord(import_set_table);
+					grecord.initialize();
+					grecord.zone=responseBody.zone;
+					grecord.short_answers=JSON.stringify(responseBody.short_answers);
+					grecord.link=responseBody.link;
+					grecord.ttl=responseBody.ttl;
+					grecord.tier=responseBody.tier;
+					grecord.type=responseBody.type;
+
+					grecord.id=responseBody.zone;
+					grecord.use_client_subnet=JSON.stringify(responseBody.use_client_subnet);
+					grecord.tier=parseInt(responseBody.tier);
+					grecord.networks=JSON.stringify(responseBody.networks);
+					grecord.regions=JSON.stringify(responseBody.regions);
+					grecord.answers=JSON.stringify(responseBody.answers);
+
+					grecord.insert();
+					if(!grecord.isValidRecord()){
+						return -1;
+					}
+					else{
+						return 201;
+					}
+				} catch(e){
+					gs.error("Error in script parseZoneData of importsetapiUtils "+e);
+				}	
+			}
+		}
+	},
+
+	processImportSetViaRESTAPI: function(
+	importSetTableName,//(String) Name of Import Set Table
+	 requestBody//(JSON) Request Body
+	){
+		
+		var func = "processImportSetViaREStAPI";		
+		var importResult;
+
+		var method = "POST"; //Need to add in constants class or some table
+		var endpoint = "x_401282_nsone_int.ImportSetAPI";
+
+		var headers= [{ "name": "Accept", "value": "application/json" },
+					  { "name": "Content-Type", "value": "application/json"}];
+
+		var params = [{ "name": "stagingTableName", "value": importSetTableName},
+					  { "name": "instanceUri", "value":this.instanceUri}];
+
+		
+		var response = this.sendRequest(method, endpoint, headers, params, requestBody);
+		
+		try{
+			if (this.responseWasSuccessful(response)) {
+				//get JSON response
+				importResult = 201; 
+
+			} else {
+				importResult = -1;
+				this.result.nsOneError.errorDetails = "Error";
+			}
+		}
+		catch(e){
+			importResult = -1;
+			this.logger.error(this.type,func, "Exception thrown in getting zones" + JSON.stringify(e));   
+		}	 
+		return importResult;
+	},
+
+	/* ***Unit Test ***
+
+	//Get Zone Details
+	var domainName ='www.testtwo.com';
+	var importSetTableName = 'x_ns1_ns1_orchestr_di_zone';
+
+	var zoneDetails = new NSOneApiZones().getZoneDetails(domainName);
+
+	//Import Zone details to CMDB
+	var result = new x_ns1_ns1_orchestr.ImportSetApiUtils().processImportSet(importSetTableName, zoneDetails);
+
+	*/
+
+	type: 'ImportSetApiUtils'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-01-24 14:13:34</sys_created_on>
+        <sys_id>80c18da5db26805021b91ffa68961921</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>ImportSetApiUtils</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>sys_script_include_80c18da5db26805021b91ffa68961921</sys_update_name>
+        <sys_updated_by>smorey</sys_updated_by>
+        <sys_updated_on>2020-04-30 20:08:06</sys_updated_on>
+    </sys_script_include>
+</record_update>

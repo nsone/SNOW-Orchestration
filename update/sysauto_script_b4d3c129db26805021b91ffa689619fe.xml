@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>Process Available Request Queue Entries</name>
+        <run_as/>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period>1970-01-01 00:01:00</run_period>
+        <run_start>2019-10-19 16:42:09</run_start>
+        <run_time>1970-01-01 08:01:00</run_time>
+        <run_type>periodically</run_type>
+        <script><![CDATA[var logger = new x_ns1_ns1_orchestr.SystemLogHelper();
+var lib = "Scheduled Job";
+var func = "Process Available Request Queue Entries";
+try{
+	
+	logger.info(lib, func, "Executing Job");
+	var helper = new x_ns1_ns1_orchestr.APIRequestQueueHelper();
+	helper.processAvailableQueueEntries();
+	
+} catch(e){
+	logger.error(lib, func, e);
+}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-01-24 14:22:38</sys_created_on>
+        <sys_id>b4d3c129db26805021b91ffa689619fe</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Process Available Request Queue Entries</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>sysauto_script_b4d3c129db26805021b91ffa689619fe</sys_update_name>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-03 12:34:27</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

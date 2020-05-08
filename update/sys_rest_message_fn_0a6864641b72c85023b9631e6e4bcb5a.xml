@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content/>
+        <function_name>List scope Group</function_name>
+        <http_method>get</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>NS1-DHCP [ List scope Group ]</qualified_name>
+        <rest_endpoint>https://${api.mycompany.net}/v1/dhcp/scopegroup</rest_endpoint>
+        <rest_message display_value="NS1-DHCP">2433cde5db26805021b91ffa6896192f</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>smorey</sys_created_by>
+        <sys_created_on>2020-02-02 20:04:37</sys_created_on>
+        <sys_id>0a6864641b72c85023b9631e6e4bcb5a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>List scope Group</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>sys_rest_message_fn_0a6864641b72c85023b9631e6e4bcb5a</sys_update_name>
+        <sys_updated_by>smorey</sys_updated_by>
+        <sys_updated_on>2020-02-02 20:04:37</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

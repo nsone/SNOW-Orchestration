@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="wf_element_activity">
+    <wf_element_activity action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <attributes/>
+        <base_provider display_value="REST Web Service">8817a25e37222100aa40cc9fbe41f106</base_provider>
+        <category>DHCP</category>
+        <checked_out_by/>
+        <default_height/>
+        <default_width/>
+        <description>List Reservations</description>
+        <image>images/heisenberg_icons/workflow_ie8/provider_rest.png</image>
+        <input_meta>{"name":"Input","type":"DATA_OBJECT","properties":[{"name":"domain","type":"STRING","mandatory":true}]}</input_meta>
+        <input_process_script><![CDATA[function createHeader()
+{
+var NS1header={};
+NS1header.name='X-NSONE-Key';
+NS1header.value=gs.getProperty('x_ns1_ns1_orchestr.nsone.api.key');
+executionParam.headers.push(NS1header);
+}
+createHeader();]]></input_process_script>
+        <input_transform>{"web_service_message":"2433cde5db26805021b91ffa6896192f","web_service_message_function":"6c33cde5db26805021b91ffa6896192f","web_service_endpoint":"","parameters":"[{\"name\":\"api.mycompany.net\",\"value\":\"${activityInput.domain}\",\"additional_attribute\":\"\"}]","headers":"[]","queryParameters":"[]","midCapabilities":"18409d8007482000dada43c0d1021e8f","use_mid_server":"false","time_out":"10","auth_type":"use_existing_credentials","credentials":"","protocol_profile":"","oauth_entity_profile":""}</input_transform>
+        <local_variables>{"name":"Local","type":"DATA_OBJECT","properties":[{"name":"LocalStatus_code","type":"INTEGER"},{"name":"LocalHeader","type":"DATA_OBJECT","properties":[]},{"name":"LocalBody","type":"STRING"},{"name":"LocalError","type":"STRING"},{"name":"LocalOutput","type":"DATA_ARRAY","properties":[{"name":"Array element type: ","type":"STRING"}]}]}</local_variables>
+        <name>List Reservations</name>
+        <output_meta>{"name":"Output","type":"DATA_OBJECT","properties":[{"name":"status_code","type":"INTEGER"},{"name":"error","type":"STRING"},{"name":"reservations","type":"DATA_ARRAY","properties":[{"name":"Array element type: ","type":"STRING"}]}]}</output_meta>
+        <output_process_script><![CDATA[if(!executionResult.error) {
+	var reservations = global.JSON.parse(executionResult.body);
+	var outputArray = [];
+	for (var i = 0; i < reservations.length; i++) {
+			var res = reservations[i];
+			outputArray.push({
+				options : res.options,
+				id : res.id
+			});
+		}
+	activityOutput.reservations = outputArray;
+}]]></output_process_script>
+        <output_transform>[{"toLink":"activityOutput.status_code","description":"Status Code","to":"status_code","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.status_code","from":"${executionResult.status_code}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""},{"toLink":"activityOutput.error","description":"Error","to":"error","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.error","from":"${executionResult.error}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""},{"toLink":"activityOutput.reservations","description":"","to":"reservations","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.body","from":"${executionResult.body}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""}]</output_transform>
+        <processing_script/>
+        <sample_payloads>{}</sample_payloads>
+        <short_description>List Reservations</short_description>
+        <style/>
+        <sys_class_name>wf_element_activity</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-15 18:00:31</sys_created_on>
+        <sys_id>b30844801b54105023b9631e6e4bcb01</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>List Reservations</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>wf_element_activity_b30844801b54105023b9631e6e4bcb01</sys_update_name>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-15 18:01:33</sys_updated_on>
+        <version_container_id>de58c5ebdbaa085021b91ffa6896196a</version_container_id>
+    </wf_element_activity>
+    <sys_translated_text action="delete_multiple" query="documentkey=b30844801b54105023b9631e6e4bcb01"/>
+    <wf_versionable action="INSERT_OR_UPDATE">
+        <checked_out/>
+        <checked_out_by/>
+        <published>true</published>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-15 18:00:31</sys_created_on>
+        <sys_id>7f0844801b54105023b9631e6e4bcb01</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-15 18:01:33</sys_updated_on>
+        <valid_from>2020-04-15 18:01:33</valid_from>
+        <valid_to/>
+        <version>3</version>
+        <version_container_id>de58c5ebdbaa085021b91ffa6896196a</version_container_id>
+        <wf_element_definition display_value="List Reservations">b30844801b54105023b9631e6e4bcb01</wf_element_definition>
+    </wf_versionable>
+    <wf_condition_default action="INSERT_OR_UPDATE">
+        <activity_definition display_value="List Reservations">b30844801b54105023b9631e6e4bcb01</activity_definition>
+        <condition>activityOutput.error == null</condition>
+        <derived_definition>cc68816bdbaa085021b91ffa689619b7</derived_definition>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <name>Success</name>
+        <order/>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-15 18:00:31</sys_created_on>
+        <sys_id>3b0844801b54105023b9631e6e4bcb02</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-15 18:00:31</sys_updated_on>
+    </wf_condition_default>
+    <wf_condition_default action="INSERT_OR_UPDATE">
+        <activity_definition display_value="List Reservations">b30844801b54105023b9631e6e4bcb01</activity_definition>
+        <condition/>
+        <derived_definition>274b452fdbaa085021b91ffa68961957</derived_definition>
+        <else_flag>true</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <name>Failure</name>
+        <order/>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-15 18:00:31</sys_created_on>
+        <sys_id>f30844801b54105023b9631e6e4bcb02</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-15 18:00:31</sys_updated_on>
+    </wf_condition_default>
+    <wf_versionable action="update_multiple" query="version_container_id=de58c5ebdbaa085021b91ffa6896196a^sys_id!=7f0844801b54105023b9631e6e4bcb01^version&lt;3">
+        <published>false</published>
+    </wf_versionable>
+    <wf_activity action="update_multiple" is_dot_walk_query="true" query="workflow_version.published=true^activity_definition.version_container_id=de58c5ebdbaa085021b91ffa6896196a">
+        <new_activity_definition>b30844801b54105023b9631e6e4bcb01</new_activity_definition>
+        <out_of_date>true</out_of_date>
+        <notes>There is a newer version of this activity.
+
+To update the activity, check out the workflow, select the activity, right click
+and select 'Update activity' to use the latest version, then publish the workflow</notes>
+    </wf_activity>
+</record_update>

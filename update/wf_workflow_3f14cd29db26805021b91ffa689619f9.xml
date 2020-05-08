@@ -1,0 +1,1594 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="wf_workflow_version">
+    <wf_workflow_version action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <activity_stages>{"activities":{},"stages":{},"subflows":[],"ends":["be37d3abdb48105021b91ffa689619bd"]}</activity_stages>
+        <after_business_rules>false</after_business_rules>
+        <checked_out/>
+        <checked_out_by/>
+        <column_renderer display_value="Workflow-driven">a56213111b030100adca1e094f0713ac</column_renderer>
+        <condition/>
+        <condition_type>run_match</condition_type>
+        <description/>
+        <expected_sequences>363753abdb48105021b91ffa689619e1,363753abdb48105021b91ffa689619df,7a3753abdb48105021b91ffa689619e2,3a3753abdb48105021b91ffa689619e0,f63753abdb48105021b91ffa689619de,be37d3abdb48105021b91ffa689619bd</expected_sequences>
+        <expected_time>1970-01-01 14:00:00</expected_time>
+        <expected_time_type/>
+        <full_sequences>363753abdb48105021b91ffa689619e1,363753abdb48105021b91ffa689619df,7a3753abdb48105021b91ffa689619e2,3a3753abdb48105021b91ffa689619e0,b237d3abdb48105021b91ffa689619bd,f63753abdb48105021b91ffa689619de,be37d3abdb48105021b91ffa689619bd,7e3753abdb48105021b91ffa689619e1,7637d3abdb48105021b91ffa689619bc,763753abdb48105021b91ffa689619dd</full_sequences>
+        <journal/>
+        <max_activity_count>100</max_activity_count>
+        <name>NS1 Delete IPAM iP address Reservation</name>
+        <not_cacheable>false</not_cacheable>
+        <on_cancel><![CDATA[// This script executes if the workflow is cancelled.// The global variable context_sys_id contains the sys_id of the cancelled workflow context.]]></on_cancel>
+        <order>100</order>
+        <pin_type>set_by_activity</pin_type>
+        <published>true</published>
+        <relative_duration display_value="2 business days by 4pm">3bf802c20a0a0b52008e2859cd8abcf2</relative_duration>
+        <requires_ert>true</requires_ert>
+        <run_multiple>false</run_multiple>
+        <schedule/>
+        <stage_field/>
+        <stage_order>computed</stage_order>
+        <start display_value="Begin">363753abdb48105021b91ffa689619e1</start>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>723753abdb48105021b91ffa689619dc</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 20:40:19</sys_updated_on>
+        <table>global</table>
+        <timezone/>
+        <validated>true</validated>
+        <workflow display_value="NS1 Delete IPAM iP address Reservation">3f14cd29db26805021b91ffa689619f9</workflow>
+    </wf_workflow_version>
+    <wf_workflow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <description/>
+        <name>NS1 Delete IPAM iP address Reservation</name>
+        <preview/>
+        <sys_class_name>wf_workflow</sys_class_name>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-01-24 14:23:56</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3f14cd29db26805021b91ffa689619f9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>NS1 Delete IPAM iP address Reservation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>wf_workflow_3f14cd29db26805021b91ffa689619f9</sys_update_name>
+        <sys_updated_by>rpatil</sys_updated_by>
+        <sys_updated_on>2020-01-24 14:23:56</sys_updated_on>
+        <table>global</table>
+        <template>false</template>
+        <vars/>
+    </wf_workflow>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Begin">c7a5e32c0a0a0b3a002377c24ed8ea76</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>1</databus_lookup_id>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>Begin</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>363753abdb48105021b91ffa689619e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width>80</width>
+        <workflow_version display_value="NS1 Delete IPAM iP address Reservation">723753abdb48105021b91ffa689619dc</workflow_version>
+        <x>11</x>
+        <y>5</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=363753abdb48105021b91ffa689619e1"/>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Begin">363753abdb48105021b91ffa689619e1</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Always</name>
+        <order>0</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>f63753abdb48105021b91ffa689619e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Delete Reservation">15c51b2bdb48105021b91ffa68961978</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>59</databus_lookup_id>
+        <height/>
+        <input>{"domain":"${workflow.inputs.u_domain}","reservation_id":"${workflow.inputs.u_reservation_id}"}</input>
+        <is_parent>false</is_parent>
+        <name>Delete a Reservation</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>3a3753abdb48105021b91ffa689619e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="NS1 Delete IPAM iP address Reservation">723753abdb48105021b91ffa689619dc</workflow_version>
+        <x>195</x>
+        <y>379</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=3a3753abdb48105021b91ffa689619e0"/>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Delete a Reservation">3a3753abdb48105021b91ffa689619e0</activity>
+        <condition/>
+        <condition_default display_value="Failure">8b6a04f01b360c5023b9631e6e4bcb04</condition_default>
+        <condition_type>standard</condition_type>
+        <else_flag>true</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Failure</name>
+        <order>-1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>3e3753abdb48105021b91ffa689619e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Delete a Reservation">3a3753abdb48105021b91ffa689619e0</activity>
+        <condition>activityOutput.error == null</condition>
+        <condition_default display_value="Success">476a04f01b360c5023b9631e6e4bcb04</condition_default>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Success</name>
+        <order>-1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>be3753abdb48105021b91ffa689619e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Delete Host Record">ecc51b2bdb48105021b91ffa68961972</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>52</databus_lookup_id>
+        <height/>
+        <input>{"domain":"${workflow.scratchpad.domain_name}","type":"${workflow.inputs.u_type}","zone":"${workflow.scratchpad.host_name}","company_domain":"${workflow.inputs.u_company_domain}"}</input>
+        <is_parent>false</is_parent>
+        <name>Delete Host Record </name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7637d3abdb48105021b91ffa689619bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="NS1 Delete IPAM iP address Reservation">723753abdb48105021b91ffa689619dc</workflow_version>
+        <x>925</x>
+        <y>136</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=7637d3abdb48105021b91ffa689619bc"/>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Delete Host Record ">7637d3abdb48105021b91ffa689619bc</activity>
+        <condition/>
+        <condition_default display_value="Failure">5d0097101bfa885023b9631e6e4bcbdf</condition_default>
+        <condition_type>standard</condition_type>
+        <else_flag>true</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Failure</name>
+        <order>-1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7a37d3abdb48105021b91ffa689619bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Delete Host Record ">7637d3abdb48105021b91ffa689619bc</activity>
+        <condition>activityOutput.error == null</condition>
+        <condition_default display_value="Success">12ce0b9c1bba885023b9631e6e4bcb05</condition_default>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Success</name>
+        <order>-1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>fa37d3abdb48105021b91ffa689619bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="If">98f621ca0a0a0b5900f7c291f5e45a0e</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>61</databus_lookup_id>
+        <height/>
+        <input>{}</input>
+        <is_parent>false</is_parent>
+        <name>Delete IPAM record for this host</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>363753abdb48105021b91ffa689619df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="NS1 Delete IPAM iP address Reservation">723753abdb48105021b91ffa689619dc</workflow_version>
+        <x>4</x>
+        <y>92</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=363753abdb48105021b91ffa689619df"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>363753abdb48105021b91ffa689619df</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>3e3753abdb48105021b91ffa689619df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <value>// This script needs to set answer to 'yes' or 'no' to indicate the state of the activity.&#13;
+//&#13;
+// For example,&#13;
+//&#13;
+//   answer = ifScript();&#13;
+//&#13;
+//   function ifScript() {&#13;
+//      if (condition is true) {&#13;
+//         return 'yes';&#13;
+//      }&#13;
+//      return 'no';&#13;
+//   }&#13;
+  answer = ifScript();&#13;
+&#13;
+   function ifScript() {&#13;
+      if (workflow.inputs.u_delete_ipam_record_for_this_host==true) {&#13;
+         return 'yes';&#13;
+      }&#13;
+      return 'no';&#13;
+   }</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>363753abdb48105021b91ffa689619df</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7a3753abdb48105021b91ffa689619df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>363753abdb48105021b91ffa689619df</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>b63753abdb48105021b91ffa689619df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>363753abdb48105021b91ffa689619df</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>b63753abdb48105021b91ffa689619df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>363753abdb48105021b91ffa689619df</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7a3753abdb48105021b91ffa689619df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>363753abdb48105021b91ffa689619df</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>3e3753abdb48105021b91ffa689619df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <value>// This script needs to set answer to 'yes' or 'no' to indicate the state of the activity.&#13;
+//&#13;
+// For example,&#13;
+//&#13;
+//   answer = ifScript();&#13;
+//&#13;
+//   function ifScript() {&#13;
+//      if (condition is true) {&#13;
+//         return 'yes';&#13;
+//      }&#13;
+//      return 'no';&#13;
+//   }&#13;
+  answer = ifScript();&#13;
+&#13;
+   function ifScript() {&#13;
+      if (workflow.inputs.u_delete_ipam_record_for_this_host==true) {&#13;
+         return 'yes';&#13;
+      }&#13;
+      return 'no';&#13;
+   }</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Delete IPAM record for this host">363753abdb48105021b91ffa689619df</activity>
+        <condition>activity.result == 'no'</condition>
+        <condition_default display_value="No">c1eff6430a0a0b59000f955abe842c94</condition_default>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>No</name>
+        <order>200</order>
+        <short_description/>
+        <skip_during_generate>true</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>323753abdb48105021b91ffa689619e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Delete IPAM record for this host">363753abdb48105021b91ffa689619df</activity>
+        <condition>activity.result == 'yes'</condition>
+        <condition_default display_value="Yes">c1ef63200a0a0b59005ef89bae78feb7</condition_default>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Yes</name>
+        <order>100</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>b23753abdb48105021b91ffa689619e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="End">c7a66f7d0a0a0b3a004544a6d2f14076</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>2</databus_lookup_id>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>End</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>be37d3abdb48105021b91ffa689619bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width>80</width>
+        <workflow_version display_value="NS1 Delete IPAM iP address Reservation">723753abdb48105021b91ffa689619dc</workflow_version>
+        <x>843</x>
+        <y>537</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=be37d3abdb48105021b91ffa689619bd"/>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Run Script">db8c65aec0a8016501d00259bc7203a4</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>4</databus_lookup_id>
+        <height/>
+        <input>{}</input>
+        <is_parent>false</is_parent>
+        <name>Get Domain name, Zone name and Address ID</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>b237d3abdb48105021b91ffa689619bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="NS1 Delete IPAM iP address Reservation">723753abdb48105021b91ffa689619dc</workflow_version>
+        <x>469</x>
+        <y>140</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=b237d3abdb48105021b91ffa689619bd"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b237d3abdb48105021b91ffa689619bd</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>3637d3abdb48105021b91ffa689619bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <value>//loop through reservation options&#13;
+getOptionsAndHostName();&#13;
+function getOptionsAndHostName(){&#13;
+var options = data.get(48).output.options;&#13;
+&#13;
+for (var i=0; i&lt; options.length; i++) {&#13;
+	if(options[i].name == "dhcpv4/domain-name"){&#13;
+		if(options[i].value != ""){&#13;
+			workflow.scratchpad.domain_name = options[i].value;&#13;
+		}&#13;
+	}&#13;
+	if(options[i].name == "dhcpv4/host-name"){&#13;
+		if(options[i].value != ""){&#13;
+			workflow.scratchpad.host_name = options[i].value;&#13;
+		}&#13;
+	}&#13;
+}&#13;
+	&#13;
+workflow.scratchpad.address_id = data.get(48).output.address_id;&#13;
+	gs.info(workflow.scratchpad.host_name+' workflow.scratchpad.host_name');&#13;
+}</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b237d3abdb48105021b91ffa689619bd</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>3637d3abdb48105021b91ffa689619bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <value>//loop through reservation options&#13;
+getOptionsAndHostName();&#13;
+function getOptionsAndHostName(){&#13;
+var options = data.get(48).output.options;&#13;
+&#13;
+for (var i=0; i&lt; options.length; i++) {&#13;
+	if(options[i].name == "dhcpv4/domain-name"){&#13;
+		if(options[i].value != ""){&#13;
+			workflow.scratchpad.domain_name = options[i].value;&#13;
+		}&#13;
+	}&#13;
+	if(options[i].name == "dhcpv4/host-name"){&#13;
+		if(options[i].value != ""){&#13;
+			workflow.scratchpad.host_name = options[i].value;&#13;
+		}&#13;
+	}&#13;
+}&#13;
+	&#13;
+workflow.scratchpad.address_id = data.get(48).output.address_id;&#13;
+	gs.info(workflow.scratchpad.host_name+' workflow.scratchpad.host_name');&#13;
+}</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Get Domain name, Zone name and Address ID">b237d3abdb48105021b91ffa689619bd</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Always</name>
+        <order>0</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>3a37d3abdb48105021b91ffa689619bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Get record configuration details">f865dbe7db48105021b91ffa689619ae</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>66</databus_lookup_id>
+        <height/>
+        <input>{"domain":"${workflow.scratchpad.domain_name}","type":"${workflow.inputs.u_type}","zone":"${workflow.scratchpad.host_name}","company_domain":"${workflow.inputs.u_company_domain}"}</input>
+        <is_parent>false</is_parent>
+        <name>Get Record Configuration Details</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7e3753abdb48105021b91ffa689619e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="NS1 Delete IPAM iP address Reservation">723753abdb48105021b91ffa689619dc</workflow_version>
+        <x>695</x>
+        <y>105</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=7e3753abdb48105021b91ffa689619e1"/>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Get Record Configuration Details">7e3753abdb48105021b91ffa689619e1</activity>
+        <condition/>
+        <condition_default display_value="Failure">9fda9049db72009021b91ffa689619b8</condition_default>
+        <condition_type>standard</condition_type>
+        <else_flag>true</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Failure</name>
+        <order>-1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>f23753abdb48105021b91ffa689619e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Get Record Configuration Details">7e3753abdb48105021b91ffa689619e1</activity>
+        <condition>activityOutput.error == null</condition>
+        <condition_default display_value="Success">dbda1849db72009021b91ffa68961911</condition_default>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Success</name>
+        <order>-1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>723753abdb48105021b91ffa689619e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Get Reservation Details">4846936bdb48105021b91ffa6896198d</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>48</databus_lookup_id>
+        <height/>
+        <input>{"domain":"${workflow.inputs.u_domain}","reservation_id":"${workflow.inputs.u_reservation_id}"}</input>
+        <is_parent>false</is_parent>
+        <name>Get Reservation Details</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7a3753abdb48105021b91ffa689619e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="NS1 Delete IPAM iP address Reservation">723753abdb48105021b91ffa689619dc</workflow_version>
+        <x>252</x>
+        <y>88</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=7a3753abdb48105021b91ffa689619e2"/>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Get Reservation Details">7a3753abdb48105021b91ffa689619e2</activity>
+        <condition/>
+        <condition_default display_value="Failure">bb699344dbbe885021b91ffa689619fc</condition_default>
+        <condition_type>standard</condition_type>
+        <else_flag>true</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Failure</name>
+        <order>-1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7e37d3abdb48105021b91ffa689619bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Get Reservation Details">7a3753abdb48105021b91ffa689619e2</activity>
+        <condition>activityOutput.error == null</condition>
+        <condition_default display_value="Success">f1f85fc0dbbe885021b91ffa68961963</condition_default>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Success</name>
+        <order>-1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>fe37d3abdb48105021b91ffa689619bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Run Script">db8c65aec0a8016501d00259bc7203a4</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>67</databus_lookup_id>
+        <height/>
+        <input>{}</input>
+        <is_parent>false</is_parent>
+        <name>Log Error</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>763753abdb48105021b91ffa689619dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="NS1 Delete IPAM iP address Reservation">723753abdb48105021b91ffa689619dc</workflow_version>
+        <x>1058</x>
+        <y>386</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=763753abdb48105021b91ffa689619dd"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>763753abdb48105021b91ffa689619dd</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7a3753abdb48105021b91ffa689619dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <value>workflow.scratchpad.error = data.get(52).error;&#13;
+</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>763753abdb48105021b91ffa689619dd</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7a3753abdb48105021b91ffa689619dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <value>workflow.scratchpad.error = data.get(52).error;&#13;
+</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Log Error">763753abdb48105021b91ffa689619dd</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Always</name>
+        <order>0</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7e3753abdb48105021b91ffa689619dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Run Script">db8c65aec0a8016501d00259bc7203a4</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>60</databus_lookup_id>
+        <height/>
+        <input>{}</input>
+        <is_parent>false</is_parent>
+        <name>Log Error</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>f63753abdb48105021b91ffa689619de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="NS1 Delete IPAM iP address Reservation">723753abdb48105021b91ffa689619dc</workflow_version>
+        <x>433</x>
+        <y>462</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=f63753abdb48105021b91ffa689619de"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>f63753abdb48105021b91ffa689619de</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7a3753abdb48105021b91ffa689619de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <value>workflow.scratchpad.error = data.get(59).error;&#13;
+</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>f63753abdb48105021b91ffa689619de</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7a3753abdb48105021b91ffa689619de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <value>workflow.scratchpad.error = data.get(59).error;&#13;
+</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Log Error">f63753abdb48105021b91ffa689619de</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Always</name>
+        <order>0</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7e3753abdb48105021b91ffa689619de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+    </wf_condition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Failure">f23753abdb48105021b91ffa689619e2</condition>
+        <from display_value="Get Record Configuration Details">7e3753abdb48105021b91ffa689619e1</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>3237d3abdb48105021b91ffa689619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="Delete a Reservation">3a3753abdb48105021b91ffa689619e0</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">7e3753abdb48105021b91ffa689619dd</condition>
+        <from display_value="Log Error">763753abdb48105021b91ffa689619dd</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>3637d3abdb48105021b91ffa689619bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="End">be37d3abdb48105021b91ffa689619bd</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Failure">7a37d3abdb48105021b91ffa689619bc</condition>
+        <from display_value="Delete Host Record ">7637d3abdb48105021b91ffa689619bc</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>3a37d3abdb48105021b91ffa689619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="Log Error">763753abdb48105021b91ffa689619dd</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">3a37d3abdb48105021b91ffa689619bd</condition>
+        <from display_value="Get Domain name, Zone name and Address ID">b237d3abdb48105021b91ffa689619bd</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>3e37d3abdb48105021b91ffa689619bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="Get Record Configuration Details">7e3753abdb48105021b91ffa689619e1</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Success">fe37d3abdb48105021b91ffa689619bb</condition>
+        <from display_value="Get Reservation Details">7a3753abdb48105021b91ffa689619e2</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7237d3abdb48105021b91ffa689619bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="Get Domain name, Zone name and Address ID">b237d3abdb48105021b91ffa689619bd</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Yes">b23753abdb48105021b91ffa689619e0</condition>
+        <from display_value="Delete IPAM record for this host">363753abdb48105021b91ffa689619df</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7a37d3abdb48105021b91ffa689619bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="Get Reservation Details">7a3753abdb48105021b91ffa689619e2</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Failure">3e3753abdb48105021b91ffa689619e0</condition>
+        <from display_value="Delete a Reservation">3a3753abdb48105021b91ffa689619e0</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>7e37d3abdb48105021b91ffa689619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="Log Error">f63753abdb48105021b91ffa689619de</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Success">723753abdb48105021b91ffa689619e2</condition>
+        <from display_value="Get Record Configuration Details">7e3753abdb48105021b91ffa689619e1</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>b237d3abdb48105021b91ffa689619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="Delete Host Record ">7637d3abdb48105021b91ffa689619bc</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Success">fa37d3abdb48105021b91ffa689619bc</condition>
+        <from display_value="Delete Host Record ">7637d3abdb48105021b91ffa689619bc</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>b637d3abdb48105021b91ffa689619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="Delete a Reservation">3a3753abdb48105021b91ffa689619e0</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">f63753abdb48105021b91ffa689619e1</condition>
+        <from display_value="Begin">363753abdb48105021b91ffa689619e1</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>f237d3abdb48105021b91ffa689619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="Delete IPAM record for this host">363753abdb48105021b91ffa689619df</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="No">323753abdb48105021b91ffa689619e0</condition>
+        <from display_value="Delete IPAM record for this host">363753abdb48105021b91ffa689619df</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>f637d3abdb48105021b91ffa689619bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="Delete a Reservation">3a3753abdb48105021b91ffa689619e0</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Success">be3753abdb48105021b91ffa689619e0</condition>
+        <from display_value="Delete a Reservation">3a3753abdb48105021b91ffa689619e0</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>fa37d3abdb48105021b91ffa689619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="End">be37d3abdb48105021b91ffa689619bd</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Failure">7e37d3abdb48105021b91ffa689619bb</condition>
+        <from display_value="Get Reservation Details">7a3753abdb48105021b91ffa689619e2</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>fe37d3abdb48105021b91ffa689619be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="Delete a Reservation">3a3753abdb48105021b91ffa689619e0</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">7e3753abdb48105021b91ffa689619de</condition>
+        <from display_value="Log Error">f63753abdb48105021b91ffa689619de</from>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>fe37d3abdb48105021b91ffa689619bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <to display_value="End">be37d3abdb48105021b91ffa689619bd</to>
+    </wf_transition>
+    <var_dictionary action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Company Domain</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value>javascript:gs.getProperty('x_ns1_ns1_orchestr.enterprise.domain')</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>u_company_domain</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">string_full_utf8</internal_type>
+        <label>Company Domain</label>
+        <mandatory>true</mandatory>
+        <max_length>1000</max_length>
+        <model_id>3f14cd29db26805021b91ffa689619f9</model_id>
+        <model_table>wf_workflow</model_table>
+        <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>var_dictionary</sys_class_name>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-01-24 14:23:57</sys_created_on>
+        <sys_id>04240569db26805021b91ffa68961906</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Company Domain</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>var_dictionary_04240569db26805021b91ffa68961906</sys_update_name>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 20:01:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </var_dictionary>
+    <var_dictionary action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Reservation Id</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value>414</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>u_reservation_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>Reservation Id</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model_id>3f14cd29db26805021b91ffa689619f9</model_id>
+        <model_table>wf_workflow</model_table>
+        <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>var_dictionary</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-02-03 12:10:30</sys_created_on>
+        <sys_id>535500301b360c5023b9631e6e4bcb85</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Reservation Id</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>var_dictionary_535500301b360c5023b9631e6e4bcb85</sys_update_name>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-02-03 12:10:30</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </var_dictionary>
+    <var_dictionary action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Domain</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value>demo.nsone.net</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>u_domain</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">string_full_utf8</internal_type>
+        <label>Domain</label>
+        <mandatory>true</mandatory>
+        <max_length>1000</max_length>
+        <model_id>3f14cd29db26805021b91ffa689619f9</model_id>
+        <model_table>wf_workflow</model_table>
+        <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>var_dictionary</sys_class_name>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-01-24 14:23:57</sys_created_on>
+        <sys_id>7f14c169db26805021b91ffa689619f5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Domain</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>var_dictionary_7f14c169db26805021b91ffa689619f5</sys_update_name>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 20:01:23</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </var_dictionary>
+    <var_dictionary action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Delete IPAM record for this host</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>u_delete_ipam_record_for_this_host</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Delete IPAM record for this host</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model_id>3f14cd29db26805021b91ffa689619f9</model_id>
+        <model_table>wf_workflow</model_table>
+        <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>var_dictionary</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-03-26 13:30:50</sys_created_on>
+        <sys_id>c35a0861db3b4c1021b91ffa689619ae</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Delete IPAM record for this host</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>var_dictionary_c35a0861db3b4c1021b91ffa689619ae</sys_update_name>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-03-26 13:30:51</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </var_dictionary>
+    <var_dictionary action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes/>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice>3</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Type</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value>A</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>u_type</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Choice">choice</internal_type>
+        <label>Type</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model_id>3f14cd29db26805021b91ffa689619f9</model_id>
+        <model_table>wf_workflow</model_table>
+        <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>var_dictionary</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-01 19:14:32</sys_created_on>
+        <sys_id>da82dce7db37801021b91ffa68961920</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Type</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>var_dictionary_da82dce7db37801021b91ffa68961920</sys_update_name>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-01 19:14:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </var_dictionary>
+    <sys_documentation element="u_delete_ipam_record_for_this_host" language="en" table="var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_delete_ipam_record_for_this_host</element>
+            <help/>
+            <hint/>
+            <label>Delete IPAM record for this host</label>
+            <language>en</language>
+            <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+            <plural>Delete IPAM record for this host</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>wsuser</sys_created_by>
+            <sys_created_on>2020-03-26 13:30:51</sys_created_on>
+            <sys_id>5e8a8861db3b4c1021b91ffa68961959</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Delete IPAM record for this host</sys_name>
+            <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+            <sys_update_name>sys_documentation_var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9_u_delete_ipam_record_for_this_host_en</sys_update_name>
+            <sys_updated_by>wsuser</sys_updated_by>
+            <sys_updated_on>2020-03-26 13:30:51</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+    <sys_documentation element="u_reservation_id" language="en" table="var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_reservation_id</element>
+            <help/>
+            <hint/>
+            <label>Reservation Id</label>
+            <language>en</language>
+            <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+            <plural>Reservation Id</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>wsuser</sys_created_by>
+            <sys_created_on>2020-02-03 12:10:30</sys_created_on>
+            <sys_id>667500301b360c5023b9631e6e4bcbc0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Reservation Id</sys_name>
+            <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+            <sys_update_name>sys_documentation_var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9_u_reservation_id_en</sys_update_name>
+            <sys_updated_by>wsuser</sys_updated_by>
+            <sys_updated_on>2020-02-03 12:10:30</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+    <sys_documentation element="u_domain" language="en" table="var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_domain</element>
+            <help/>
+            <hint/>
+            <label>Domain</label>
+            <language>en</language>
+            <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+            <plural>Domain</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>rpatil</sys_created_by>
+            <sys_created_on>2020-01-24 14:23:57</sys_created_on>
+            <sys_id>7b14c169db26805021b91ffa689619fc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Domain</sys_name>
+            <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+            <sys_update_name>sys_documentation_var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9_u_domain_en</sys_update_name>
+            <sys_updated_by>rpatil</sys_updated_by>
+            <sys_updated_on>2020-01-24 14:23:57</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+    <sys_documentation element="u_type" language="en" table="var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_type</element>
+            <help/>
+            <hint/>
+            <label>Type</label>
+            <language>en</language>
+            <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+            <plural>Type</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>wsuser</sys_created_by>
+            <sys_created_on>2020-04-01 19:14:32</sys_created_on>
+            <sys_id>afb2902bdb37801021b91ffa68961911</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Type</sys_name>
+            <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+            <sys_update_name>sys_documentation_var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9_u_type_en</sys_update_name>
+            <sys_updated_by>wsuser</sys_updated_by>
+            <sys_updated_on>2020-04-01 19:14:32</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+    <sys_documentation element="u_company_domain" language="en" table="var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_company_domain</element>
+            <help/>
+            <hint/>
+            <label>Company Domain</label>
+            <language>en</language>
+            <name>var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9</name>
+            <plural>Company Domain</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>rpatil</sys_created_by>
+            <sys_created_on>2020-01-24 14:23:57</sys_created_on>
+            <sys_id>c0240569db26805021b91ffa68961917</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Company Domain</sys_name>
+            <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+            <sys_update_name>sys_documentation_var__m_var_dictionary_3f14cd29db26805021b91ffa689619f9_u_company_domain_en</sys_update_name>
+            <sys_updated_by>rpatil</sys_updated_by>
+            <sys_updated_on>2020-01-24 14:23:57</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+    <wf_estimated_runtime_config action="INSERT_OR_UPDATE">
+        <estimated_run_time/>
+        <no_of_data_points>1</no_of_data_points>
+        <percentage_threshold_ert>20</percentage_threshold_ert>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-14 19:48:42</sys_created_on>
+        <sys_id>f23753abdb48105021b91ffa689619dc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-14 19:48:42</sys_updated_on>
+        <workflow_version display_value="NS1 Delete IPAM iP address Reservation">723753abdb48105021b91ffa689619dc</workflow_version>
+    </wf_estimated_runtime_config>
+    <wf_workflow_version action="update_multiple" query="workflow=3f14cd29db26805021b91ffa689619f9^sys_id!=723753abdb48105021b91ffa689619dc">
+        <published>false</published>
+    </wf_workflow_version>
+</record_update>

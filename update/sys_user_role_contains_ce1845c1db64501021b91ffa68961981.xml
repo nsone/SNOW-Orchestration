@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="x_ns1_ns1_orchestr.user" name="x_ns1_ns1_orchestr.user">a6a98b581bba885023b9631e6e4bcbd8</contains>
+        <role display_value="x_ns1_ns1_orchestr.manager" name="x_ns1_ns1_orchestr.manager">3ff97fd81b7e885023b9631e6e4bcbcb</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>smorey</sys_created_by>
+        <sys_created_on>2020-05-01 11:29:55</sys_created_on>
+        <sys_id>ce1845c1db64501021b91ffa68961981</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_ns1_ns1_orchestr.user.x_ns1_ns1_orchestr.manager</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>sys_user_role_contains_ce1845c1db64501021b91ffa68961981</sys_update_name>
+        <sys_updated_by>smorey</sys_updated_by>
+        <sys_updated_on>2020-05-01 11:29:55</sys_updated_on>
+    </sys_user_role_contains>
+</record_update>

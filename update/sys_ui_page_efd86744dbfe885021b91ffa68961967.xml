@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[onLoad();
+
+//get Refresh time interval from property 
+var sec = $[gs.getProperty('x_ns1_ns1_orchestr.monitoring.interval')];
+var min = parseInt(sec/60);
+gel('refreshID').innerHTML = "This page will auto-refresh after every "+ min +" mins";
+
+function onLoad(){
+	var ga = new GlideAjax('NS1ApiMonitoring');
+	ga.addParam("sysparm_name", "getSyncUpData");
+	ga.getXML(getAnswer);
+
+	function getAnswer(response) {
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		//alert("Answer : "+answer);
+		if(answer){	
+			var res = answer.split(",");
+			var synUp = res[0];
+			var status = res[1];
+			var url =res[2];
+			var nextSchedule =res[3];
+			var interval=res[4];
+			//var instance = res[5];
+			updateDate(synUp,status,url);
+			updateNextSchedule(nextSchedule,interval);
+		}
+	}
+}
+
+function loadData(){
+	var ga = new GlideAjax('NS1ApiMonitoring');
+	ga.addParam("sysparm_name", "loadNSOneApi");
+	ga.getXML(loadDataParse);
+	//alert("Loading");
+
+	function loadDataParse(response) {
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+
+		var res = answer.split(",");
+		var synUp = res[0];
+		var status = res[1];
+		var url =res[2];
+		var nextSchedule =res[3];
+		var interval=res[4];
+		updateDate(synUp,status,url);
+		jslog('answer is'+answer); 
+	}
+}
+
+function updateDate(synUp,status,url){
+	gel('statusTime').innerHTML = synUp;
+	gel('statusValue').innerHTML = status;
+	gel('importURL').href = url;
+}
+
+function updateNextSchedule(nextSchedule,interval){
+	gel('scheduleTime').innerHTML = nextSchedule; 
+	gel('scheduleValue').innerHTML = "Schedule job will run after every "+interval;
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_ns1_ns1_orchestr_API_Monitoring.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<head>
+		<meta http-equiv="refresh" content="$[gs.getProperty('x_ns1_ns1_orchestr.monitoring.interval')]" />
+		<g:requires name="styles/ldap.css" includes="true" />
+	</head>
+	<body focusout="focusTrap">
+		<div id="ldap-modal-container">
+			<table style="width:100%" class="table">
+				<tr>
+					<td><h2>NS1 API Monitoring</h2></td>
+					<td></td>
+					<td style="padding:30px 30px 0 0; text-align: right;"> <span id='refreshID'> </span> $[SP]$[SP]$[SP]
+						<button id='ldap-last-element' class="btn btn-default" name="test" onclick="onLoad();">Refresh</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<hr/>
+		<h4>Zones and Records</h4>
+		<hr/>
+		<div id="ldap-modal-container">
+			<table style="width:100%" class="table">
+				<thead>
+					<tr>
+						<th tabindex="0"><b>Name</b>
+						</th>
+						<th tabindex="0"><b>Time</b>
+						</th>
+						<th tabindex="0"><b>Details</b>
+						</th>
+					</tr>
+				</thead>
+				<tr>
+					<td nowrap="true" tabindex="0">
+						${gs.getMessage("Last Sync Date Time")}$[SP]
+					</td>
+					<td  tabindex="0" nowrap="true" id="statusTime"></td>
+					<td  tabindex="0"> Status : $[SP] <span  id="statusValue"></span>.$[SP] Check Details $[SP]
+						<a id="importURL" href="" target="_blank">here</a>
+					</td>
+				</tr>     
+				<tr>
+					<td nowrap="true" tabindex="0">
+						${gs.getMessage("Next Schedule Run")}$[SP]
+					</td>
+					<td  tabindex="0" nowrap="true" id="scheduleTime"></td>
+					<td  tabindex="0" id="scheduleValue"></td>
+				</tr> 
+			</table>
+			<hr />
+			 
+			<button id='ldap-last-element' class="btn btn-default" name="test" onclick="loadData();">Load Data
+			</button>
+		</div>
+	</body>
+</j:jelly>]]></html>
+        <name>API_Monitoring</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-02-01 20:49:03</sys_created_on>
+        <sys_id>efd86744dbfe885021b91ffa68961967</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>API_Monitoring</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>sys_ui_page_efd86744dbfe885021b91ffa68961967</sys_update_name>
+        <sys_updated_by>smorey</sys_updated_by>
+        <sys_updated_on>2020-04-03 18:10:30</sys_updated_on>
+    </sys_ui_page>
+</record_update>

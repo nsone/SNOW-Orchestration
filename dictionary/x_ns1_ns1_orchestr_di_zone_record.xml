@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="DI Zone Record" max_length="40" name="x_ns1_ns1_orchestr_di_zone_record" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Answers" max_length="1000" name="answers" type="string"/>
+        <element attributes="edge_encryption_enabled=true" display="true" label="Record Domain" max_length="255" name="domain" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Filters" max_length="255" name="filters" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Record ID" max_length="100" name="id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Meta" max_length="255" name="meta" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Networks" max_length="100" name="networks" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Regions" max_length="255" name="regions" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Short Answers" max_length="1000" name="short_answers" type="string"/>
+        <element label="Tier" max_length="40" name="tier" type="integer"/>
+        <element label="TTL" max_length="40" name="ttl" type="longint"/>
+        <element attributes="edge_encryption_enabled=true" label="Type" max_length="40" name="type" type="string"/>
+        <element label="Use Client Subnet" max_length="40" name="use_client_subnet" type="boolean"/>
+        <element label="Zone" max_length="32" name="zone" reference="x_ns1_ns1_orchestr_dns_zone" type="reference"/>
+        <index name="index">
+            <element name="zone"/>
+        </index>
+    </element>
+</database>

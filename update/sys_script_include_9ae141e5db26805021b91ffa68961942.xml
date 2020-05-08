@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_ns1_ns1_orchestr.NSOneErrorHandler</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>NSOneErrorHandler</name>
+        <script><![CDATA[var NSOneErrorHandler = Class.create();
+NSOneErrorHandler.prototype = {
+	initialize: function() {
+	},
+
+	dhcpErrorHandler: function(inputs, outputs) {
+		outputs.error_message = inputs.errorMessage + " " + JSON.parse(inputs.responseBody).message;
+      if(!inputs.errorMessage){
+		  outputs.error_message =  JSON.parse(inputs.responseBody).message;
+	  }
+		outputs.status = 'Failure';
+		var now = new GlideDateTime().getDisplayValue();
+		gs.info('DHCP API Error. Error while trying to connect with NS One Server at ' + now + '. Error message: "' + outputs.error_message + '"!');
+
+		return outputs;
+	},
+
+	ipamErrorHandler: function(inputs, outputs) {
+
+		outputs.error_message = inputs.errorMessage + " " + JSON.parse(inputs.responseBody).message;
+		outputs.status = 'Failure';
+		var now = new GlideDateTime().getDisplayValue();
+		gs.info('IPAM API Error. Error while trying to connect with NS One Server at ' + now + '. Error message: "' + outputs.error_message + '"!');
+
+		return outputs;
+	},
+
+	DNSErrorHandler:function(inputs, outputs) {
+
+		outputs.error_message = inputs.errorMessage + " " + JSON.parse(inputs.responseBody).message;
+		outputs.status = 'Failure';
+		var now = new GlideDateTime().getDisplayValue();
+		gs.info('DNS API Error. Error while trying to connect with NS One Server at ' + now + '. Error message: "' + outputs.error_message + '"!');
+
+		return outputs;
+	},
+	type: 'NSOneErrorHandler'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>rpatil</sys_created_by>
+        <sys_created_on>2020-01-24 14:14:17</sys_created_on>
+        <sys_id>9ae141e5db26805021b91ffa68961942</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NSOneErrorHandler</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>sys_script_include_9ae141e5db26805021b91ffa68961942</sys_update_name>
+        <sys_updated_by>rpatil</sys_updated_by>
+        <sys_updated_on>2020-01-24 14:14:17</sys_updated_on>
+    </sys_script_include>
+</record_update>

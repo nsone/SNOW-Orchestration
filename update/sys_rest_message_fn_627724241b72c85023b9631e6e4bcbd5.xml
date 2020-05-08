@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{&#13;
+  "queries": {&#13;
+    "send_warnings": ${account_queries_warnings},&#13;
+    "warning_2": ${account_queries_warning2},&#13;
+    "warning_1": ${account_queries_warning1}&#13;
+  },&#13;
+  "records": {&#13;
+    "send_warnings": ${account_records_warnings},&#13;
+    "warning_2": ${account_records_warning2},&#13;
+    "warning_1": ${account_records_warning1}&#13;
+  }&#13;
+}</content>
+        <function_name>Modify overage alerting settings</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>NS1-Account Management [ Modify overage alerting settings ]</qualified_name>
+        <rest_endpoint>https://${api.mycompany.net}/v1/account/usagewarnings</rest_endpoint>
+        <rest_message display_value="NS1-Account Management">3a134129db26805021b91ffa689619f6</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>smorey</sys_created_by>
+        <sys_created_on>2020-02-02 20:00:34</sys_created_on>
+        <sys_id>627724241b72c85023b9631e6e4bcbd5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Modify overage alerting settings</sys_name>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>sys_rest_message_fn_627724241b72c85023b9631e6e4bcbd5</sys_update_name>
+        <sys_updated_by>smorey</sys_updated_by>
+        <sys_updated_on>2020-02-02 20:00:34</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

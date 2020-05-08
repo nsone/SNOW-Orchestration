@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update node_type="sys_portal_page" unload_date="2020-05-08 13:02:28">
+    <sys_portal_page action="INSERT_OR_UPDATE">
+        <layout/>
+        <order>4000</order>
+        <read_roles>x_ns1_ns1_orchestr.admin,x_ns1_ns1_orchestr.manager,x_ns1_ns1_orchestr.user</read_roles>
+        <roles>x_ns1_ns1_orchestr.admin,admin</roles>
+        <selectable>false</selectable>
+        <sys_class_name>sys_portal_page</sys_class_name>
+        <sys_created_by>wsuser</sys_created_by>
+        <sys_created_on>2020-04-03 18:39:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>66fd1a00db48141021b91ffa68961918</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>PA NS1 Dashboard - New Tab</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+        <sys_update_name>sys_portal_page_66fd1a00db48141021b91ffa68961918</sys_update_name>
+        <sys_updated_by>wsuser</sys_updated_by>
+        <sys_updated_on>2020-04-03 18:46:59</sys_updated_on>
+        <title>PA NS1 Dashboard - New Tab</title>
+        <user/>
+        <view>pa_ns1_dashboard_-_new_tab</view>
+        <related_items_node>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone/>
+                <offset/>
+                <page display_value="PA NS1 Dashboard - New Tab">66fd1a00db48141021b91ffa68961918</page>
+                <summary>Active NS1 CIs</summary>
+                <sys_created_by>wsuser</sys_created_by>
+                <sys_created_on>2020-04-03 18:40:37</sys_created_on>
+                <sys_id>1a2e5a00db48141021b91ffa689619f0</sys_id>
+                <sys_mod_count>1</sys_mod_count>
+                <sys_updated_by>wsuser</sys_updated_by>
+                <sys_updated_on>2020-04-03 18:40:37</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2020-04-03 11:40:37">1a2e5a00db48141021b91ffa689619f0</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:40:37</sys_created_on>
+                        <sys_id>162e5a00db48141021b91ffa689619f1</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:40:37</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2020-04-03 11:40:37">1a2e5a00db48141021b91ffa689619f0</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:40:37</sys_created_on>
+                        <sys_id>1e2e5a00db48141021b91ffa689619f0</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:40:37</sys_updated_on>
+                        <value>5cbb14bcdb64809021b91ffa689619fb</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2020-04-03 11:40:37">1a2e5a00db48141021b91ffa689619f0</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:40:37</sys_created_on>
+                        <sys_id>522e5a00db48141021b91ffa689619f1</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:40:37</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2020-04-03 11:40:37">1a2e5a00db48141021b91ffa689619f0</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:40:37</sys_created_on>
+                        <sys_id>5e2e5a00db48141021b91ffa689619f1</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:40:37</sys_updated_on>
+                        <value>Active NS1 CIs</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2020-04-03 11:40:37">1a2e5a00db48141021b91ffa689619f0</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:40:37</sys_created_on>
+                        <sys_id>9a2e5a00db48141021b91ffa689619f1</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:40:37</sys_updated_on>
+                        <value>bar</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2020-04-03 11:40:37">1a2e5a00db48141021b91ffa689619f0</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:40:37</sys_created_on>
+                        <sys_id>d62e5a00db48141021b91ffa689619f1</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:40:37</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone/>
+                <offset/>
+                <page display_value="PA NS1 Dashboard - New Tab">66fd1a00db48141021b91ffa68961918</page>
+                <summary>Retired NS1 CIs</summary>
+                <sys_created_by>wsuser</sys_created_by>
+                <sys_created_on>2020-04-03 18:40:50</sys_created_on>
+                <sys_id>2d3e5e00db48141021b91ffa6896197b</sys_id>
+                <sys_mod_count>1</sys_mod_count>
+                <sys_updated_by>wsuser</sys_updated_by>
+                <sys_updated_on>2020-04-03 18:40:50</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2020-04-03 11:40:50">2d3e5e00db48141021b91ffa6896197b</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:40:50</sys_created_on>
+                        <sys_id>213e5e00db48141021b91ffa6896197c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:40:50</sys_updated_on>
+                        <value>1d0d5834dba4809021b91ffa689619ab</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2020-04-03 11:40:50">2d3e5e00db48141021b91ffa6896197b</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:40:50</sys_created_on>
+                        <sys_id>293e5e00db48141021b91ffa6896197c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:40:50</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2020-04-03 11:40:50">2d3e5e00db48141021b91ffa6896197b</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:40:50</sys_created_on>
+                        <sys_id>613e5e00db48141021b91ffa6896197d</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:40:50</sys_updated_on>
+                        <value>Retired NS1 CIs</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2020-04-03 11:40:50">2d3e5e00db48141021b91ffa6896197b</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:40:50</sys_created_on>
+                        <sys_id>653e5e00db48141021b91ffa6896197c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:40:50</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2020-04-03 11:40:50">2d3e5e00db48141021b91ffa6896197b</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:40:50</sys_created_on>
+                        <sys_id>ad3e5e00db48141021b91ffa6896197c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:40:50</sys_updated_on>
+                        <value>bar</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2020-04-03 11:40:50">2d3e5e00db48141021b91ffa6896197b</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:40:50</sys_created_on>
+                        <sys_id>e93e5e00db48141021b91ffa6896197c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:40:50</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone/>
+                <offset/>
+                <page display_value="PA NS1 Dashboard - New Tab">66fd1a00db48141021b91ffa68961918</page>
+                <summary>NS1 CI tasks</summary>
+                <sys_created_by>wsuser</sys_created_by>
+                <sys_created_on>2020-04-03 18:41:05</sys_created_on>
+                <sys_id>894e5e00db48141021b91ffa68961972</sys_id>
+                <sys_mod_count>1</sys_mod_count>
+                <sys_updated_by>wsuser</sys_updated_by>
+                <sys_updated_on>2020-04-03 18:41:05</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2020-04-03 11:41:05">894e5e00db48141021b91ffa68961972</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:41:05</sys_created_on>
+                        <sys_id>0d4e5e00db48141021b91ffa68961973</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:41:05</sys_updated_on>
+                        <value>list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2020-04-03 11:41:05">894e5e00db48141021b91ffa68961972</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:41:05</sys_created_on>
+                        <sys_id>494e5e00db48141021b91ffa68961973</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:41:05</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2020-04-03 11:41:05">894e5e00db48141021b91ffa68961972</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:41:05</sys_created_on>
+                        <sys_id>854e5e00db48141021b91ffa68961973</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:41:05</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2020-04-03 11:41:05">894e5e00db48141021b91ffa68961972</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:41:05</sys_created_on>
+                        <sys_id>8d4e5e00db48141021b91ffa68961972</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:41:05</sys_updated_on>
+                        <value>125e18b4dba4809021b91ffa68961930</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2020-04-03 11:41:05">894e5e00db48141021b91ffa68961972</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:41:05</sys_created_on>
+                        <sys_id>c14e5e00db48141021b91ffa68961973</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:41:05</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2020-04-03 11:41:05">894e5e00db48141021b91ffa68961972</portal_section>
+                        <sys_created_by>wsuser</sys_created_by>
+                        <sys_created_on>2020-04-03 18:41:05</sys_created_on>
+                        <sys_id>cd4e5e00db48141021b91ffa68961973</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>wsuser</sys_updated_by>
+                        <sys_updated_on>2020-04-03 18:41:05</sys_updated_on>
+                        <value>NS1 CI tasks</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+        </related_items_node>
+    </sys_portal_page>
+</record_update>

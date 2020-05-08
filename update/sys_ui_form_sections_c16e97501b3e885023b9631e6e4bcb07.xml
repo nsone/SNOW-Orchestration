@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="c16e97501b3e885023b9631e6e4bcb07" sys_domain="global" table="x_ns1_ns1_orchestr_dns_zone" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>wsuser</sys_created_by>
+            <sys_created_on>2020-02-02 14:41:15</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>096e97501b3e885023b9631e6e4bcb09</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_ns1_ns1_orchestr_dns_zone" name="x_ns1_ns1_orchestr_dns_zone" sys_domain="global" view="Default view">c16e97501b3e885023b9631e6e4bcb07</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_ns1_ns1_orchestr_dns_zone" sys_domain="global" view="Default view">0f5c139c1bfa885023b9631e6e4bcbe8</sys_ui_section>
+            <sys_updated_by>wsuser</sys_updated_by>
+            <sys_updated_on>2020-02-02 14:41:15</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>wsuser</sys_created_by>
+            <sys_created_on>2020-02-02 14:41:15</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>056e97501b3e885023b9631e6e4bcb0a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_ns1_ns1_orchestr_dns_zone" name="x_ns1_ns1_orchestr_dns_zone" sys_domain="global" view="Default view">c16e97501b3e885023b9631e6e4bcb07</sys_ui_form>
+            <sys_ui_section caption="Zone Settings" display_value="Zone Settings" name="x_ns1_ns1_orchestr_dns_zone" sys_domain="global" view="Default view">856e97501b3e885023b9631e6e4bcb05</sys_ui_section>
+            <sys_updated_by>wsuser</sys_updated_by>
+            <sys_updated_on>2020-02-02 14:41:15</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>wsuser</sys_created_by>
+            <sys_created_on>2020-02-02 14:41:15</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c96e97501b3e885023b9631e6e4bcb0d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_ns1_ns1_orchestr_dns_zone" name="x_ns1_ns1_orchestr_dns_zone" sys_domain="global" view="Default view">c16e97501b3e885023b9631e6e4bcb07</sys_ui_form>
+            <sys_ui_section caption="Name Servers" display_value="Name Servers" name="x_ns1_ns1_orchestr_dns_zone" sys_domain="global" view="Default view">8d6e97501b3e885023b9631e6e4bcb05</sys_ui_section>
+            <sys_updated_by>wsuser</sys_updated_by>
+            <sys_updated_on>2020-02-02 14:41:15</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>wsuser</sys_created_by>
+            <sys_created_on>2020-02-02 14:41:15</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c96e97501b3e885023b9631e6e4bcb36</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_ns1_ns1_orchestr_dns_zone" name="x_ns1_ns1_orchestr_dns_zone" sys_domain="global" view="Default view">c16e97501b3e885023b9631e6e4bcb07</sys_ui_form>
+            <sys_ui_section caption="Records" display_value="Records" name="x_ns1_ns1_orchestr_dns_zone" sys_domain="global" view="Default view">856e97501b3e885023b9631e6e4bcb06</sys_ui_section>
+            <sys_updated_by>wsuser</sys_updated_by>
+            <sys_updated_on>2020-02-02 14:41:15</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_ns1_ns1_orchestr_dns_zone</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>wsuser</sys_created_by>
+            <sys_created_on>2020-02-02 14:41:15</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c16e97501b3e885023b9631e6e4bcb07</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_ns1_ns1_orchestr_dns_zone</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="NS1 Orchestration" source="x_ns1_ns1_orchestr">50ac7061db26805021b91ffa6896193f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="NS1 Orchestration">50ac7061db26805021b91ffa6896193f</sys_scope>
+            <sys_update_name>sys_ui_form_sections_c16e97501b3e885023b9631e6e4bcb07</sys_update_name>
+            <sys_updated_by>wsuser</sys_updated_by>
+            <sys_updated_on>2020-02-02 14:41:15</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="cmdb_ci" label="Zone Record" max_length="40" name="x_ns1_ns1_orchestr_zone_record" sizeclass="346" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Answers" max_length="4000" name="answers" type="string"/>
+        <element attributes="edge_encryption_enabled=true,synchronizePartitions=true" display="true" label="Record Domain" max_length="255" name="domain" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Feeds" max_length="255" name="feeds" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Filters" max_length="255" name="filters" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Meta" max_length="255" name="meta" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Networks" max_length="255" name="networks" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Regions" max_length="255" name="regions" type="string"/>
+        <element label="Use Client Subnet" max_length="40" name="use_client_subnet" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Record ID" max_length="40" name="u_record_id" type="string"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Short Answers" max_length="4000" name="u_short_answers" reference="x_ns1_ns1_orchestr_short_answers" type="glide_list"/>
+        <element label="Tier" max_length="2" name="u_tier" type="integer"/>
+        <element label="TTL" max_length="40" name="u_ttl" type="longint"/>
+        <element choice="3" choice_field="u_type" choice_table="x_401282_nsone_int_cmdb_ci_zone_record" default="A" label="Type" max_length="40" name="u_type" type="choice">
+            <choice/>
+        </element>
+        <element label="Zone" max_length="32" name="u_zone" reference="x_ns1_ns1_orchestr_dns_zone" type="reference"/>
+    </element>
+</database>
