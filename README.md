@@ -29,3 +29,12 @@ If you find yourself unable to import your repository due to the presence of fil
    * System Import Sets
    * Orchestration
    * Configuration Management (CMDB)
+   
+# Linking of Git Repo to SNOW Instance
+  1. Login to SNOW instance
+  2. Open Development Studio (In application navigator search for studio and click on it).
+  3. Click on Import from Source Control 
+  4. Provide git credentials for the repo
+  5. It will link SNOW with the repo and create NS1 Orchestration Application
+ 
+  **For Technical specification and details please refer to technical document** @ https://github.com/nsone/servicenow/blob/master/Documents/Orchestration/1.0.17/Scoped%20Certified%20Application%20Design_Solution%20ServiceNow%20NS1%20Orchestration.docx
